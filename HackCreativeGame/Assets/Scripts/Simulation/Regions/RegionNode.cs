@@ -11,6 +11,11 @@ namespace Game.Simulation
         public List<FlowGroup> population;
         public List<RegionNode> neighbors;
 
+        public void PerformInternalTransmission()
+        {
+            
+        }
+        
         public void InitializeRegion()
         {
             population = settings.InitialFlows();

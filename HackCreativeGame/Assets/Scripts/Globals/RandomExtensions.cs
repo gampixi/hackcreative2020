@@ -10,7 +10,9 @@ namespace Game.Utilities
     {
         public static float ValueForProbability(float probability)
         {
-            return Random.Range(Mathf.Pow(probability, 2), (float)Math.Sqrt(probability));
+            return (probability != 0)
+                ? Random.Range(Mathf.Pow(probability, 2), (float)Math.Sqrt(probability))
+                : 0;
         }
     }
 }

@@ -12,16 +12,14 @@ namespace Game.Simulation
         private Population _populationTransition;
         public int Infected => population.symptomatic + population.asymptomatic;
 
-        public static FlowGroup New(FlowGroupSettings settings, int regionPopulation)
+        public FlowGroup(FlowGroupSettings settings, int regionPopulation)
         {
-            var fg = new FlowGroup();
-            fg.Settings = settings;
-            fg.population = new Population
+            Settings = settings;
+            population = new Population
             {
-                healthy = Mathf.RoundToInt((float) regionPopulation * settings.initialPopulationProportion)
+                healthy = Mathf.RoundToInt(regionPopulation * settings.initialPopulationProportion)
             };
-            fg._populationTransition = new Population();
-            return fg;
+            _populationTransition = new Population();
         }
 
         public void CalculateInternalChanges()

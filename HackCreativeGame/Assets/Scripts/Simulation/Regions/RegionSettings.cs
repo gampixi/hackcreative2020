@@ -14,7 +14,7 @@ namespace Game.Simulation
         public List<FlowGroup> InitialFlows()
         {
             var pop = new List<FlowGroup>();
-            regionFlowGroups.ForEach(x => pop.Add(FlowGroup.New(x, initialPopulation)));
+            regionFlowGroups.ForEach(x => pop.Add(new FlowGroup(x, initialPopulation)));
             return pop;
         }
     }

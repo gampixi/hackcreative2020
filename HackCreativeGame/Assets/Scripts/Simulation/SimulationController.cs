@@ -31,6 +31,11 @@ namespace Game.Simulation
             regions.ForEach(x => {
                 x.population.ForEach(p => p.PerformInternalChanges());
                 x.PerformInternalTransmission();
+                x.PerformTravel();
+            });
+            
+            regions.ForEach(x =>
+            {
                 x.UpdateTotalPopulation();
             });
         }

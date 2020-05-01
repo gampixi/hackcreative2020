@@ -10,12 +10,30 @@ public class Population
     public int asymptomatic;
     public int recovered;
 
-    public static Population operator +(Population a, Population b)
+    public static Population operator+(Population a, Population b)
     {
         a.healthy += b.healthy;
         a.symptomatic += b.symptomatic;
         a.asymptomatic += b.asymptomatic;
         a.recovered += b.recovered;
+        return a;
+    }
+    
+    public static Population operator-(Population a, Population b)
+    {
+        a.healthy -= b.healthy;
+        a.symptomatic -= b.symptomatic;
+        a.asymptomatic -= b.asymptomatic;
+        a.recovered -= b.recovered;
+        return a;
+    }
+    
+    public static Population operator*(Population a, float b)
+    {
+        a.healthy = Mathf.RoundToInt(a.healthy * b);
+        a.symptomatic = Mathf.RoundToInt(a.symptomatic * b);
+        a.asymptomatic = Mathf.RoundToInt(a.asymptomatic * b);
+        a.recovered = Mathf.RoundToInt(a.recovered * b);
         return a;
     }
 

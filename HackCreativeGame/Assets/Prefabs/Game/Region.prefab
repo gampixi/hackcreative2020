@@ -46,8 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 265e56c48f08e6344b11cb94b016d57c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 0}
-  neighbors: []
+  settings: {fileID: 11400000, guid: 42d43440886437244a0beaf3b287fb74, type: 2}
+  neighbors:
+  - {fileID: 0}
 --- !u!114 &1164917392088886920
 MonoBehaviour:
   m_ObjectHideFlags: 0

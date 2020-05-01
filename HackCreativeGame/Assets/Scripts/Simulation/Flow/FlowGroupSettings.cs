@@ -22,6 +22,7 @@ namespace Game.Simulation
         public float deathProbability;
         public float initialPopulationProportion;
         public float travelProbability;
+        public float immunityLossProbability;
     }
 
     public enum FlowGroupKind

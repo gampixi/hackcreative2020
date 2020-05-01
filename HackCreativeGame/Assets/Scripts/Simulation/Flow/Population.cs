@@ -18,4 +18,17 @@ public class Population
         a.recovered += b.recovered;
         return a;
     }
+
+    public void Reset()
+    {
+        healthy = 0;
+        symptomatic = 0;
+        asymptomatic = 0;
+        recovered = 0;
+    }
+
+    public override string ToString()
+    {
+        return $"{nameof(healthy)}: {healthy}, {nameof(symptomatic)}: {symptomatic}, {nameof(asymptomatic)}: {asymptomatic}, {nameof(recovered)}: {recovered}";
+    }
 }

@@ -6,7 +6,7 @@ using Game.Simulation;
 namespace Game
 {
     [CreateAssetMenu(fileName = "NewBenefitSettings", menuName = "Custom Game Data/Benefit Settings", order = 1)]
-    public class BenefitSettings : ScriptableObject
+    public class Benefit : ScriptableObject
     {
         [System.Serializable]
         public class HappinessData

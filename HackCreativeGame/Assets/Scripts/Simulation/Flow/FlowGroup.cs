@@ -39,6 +39,9 @@ namespace Game.Simulation
 
         public void PerformInternalChanges()
         {
+            var recoveredToHealthy = Mathf.RoundToInt(population.recovered * ValueForProbability(Settings.immunityLossProbability));
+            population.recovered -= recoveredToHealthy;
+            population.healthy += recoveredToHealthy;
             var toSymptomatic = Mathf.RoundToInt(population.asymptomatic * ValueForProbability(Settings.symptomaticProbability));
             var symptomaticToRecovered = Mathf.RoundToInt(population.symptomatic * ValueForProbability(Settings.recoverProbability));
             var asymptomaticToRecovered = Mathf.RoundToInt(

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using UnityEngine.PlayerLoop;
+using static Game.Utilities.RandomExtensions;
 
 namespace Game.Simulation
 {
@@ -48,6 +48,31 @@ namespace Game.Simulation
                 }
             }
             population.ForEach(x => x.Infect());
+        }
+
+        public void PerformTravel()
+        {
+            foreach (var group in population)
+            {
+                var travelers = new Population
+                {
+                    healthy = Mathf.RoundToInt(@group.population.healthy *
+                                               ValueForProbability(@group.Settings.travelProbability)),
+                    asymptomatic = Mathf.RoundToInt(@group.population.asymptomatic *
+                                                    ValueForProbability(@group.Settings.travelProbability)),
+                    recovered = Mathf.RoundToInt(@group.population.recovered *
+                                                 ValueForProbability(@group.Settings.travelProbability))
+                };
+                var travelersPerNeighbor = travelers * (1f / neighbors.Count);
+                // Šobrīd pieņemam ka galamērķu sadalījums ir konstants
+                foreach (var neighbor in neighbors)
+                {
+                    Debug.Log($"From {gameObject.name} to {neighbor.gameObject.name} with {travelersPerNeighbor}");
+                    var neighborGroup = neighbor.population.FirstOrDefault(x => x.Settings.kind == group.Settings.kind);
+                    neighborGroup.population += travelersPerNeighbor;
+                    group.population -= travelersPerNeighbor;
+                }
+            }
         }
 
         public void UpdateTotalPopulation()

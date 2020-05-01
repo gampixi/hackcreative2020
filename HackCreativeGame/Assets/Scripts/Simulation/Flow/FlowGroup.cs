@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlowGroup : MonoBehaviour
+namespace Game.Simulation
 {
-    // Start is called before the first frame update
-    void Start()
+    public class FlowGroup
     {
-        
-    }
+        public FlowGroupSettings Settings { get; private set; }
+        public int population;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public static FlowGroup Initialize(FlowGroupSettings settings, int regionPopulation)
+        {
+            var fg = new FlowGroup();
+            fg.Settings = settings;
+            fg.population = Mathf.RoundToInt((float) regionPopulation * settings.initialPopulationProportion);
+            return fg;
+        }
     }
 }

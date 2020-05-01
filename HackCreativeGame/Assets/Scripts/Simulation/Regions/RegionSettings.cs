@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RegionSettings : MonoBehaviour
+namespace Game.Simulation
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(fileName = "NewRegionSettings", menuName = "Custom Game Data/Region Settings", order = 1)]
+    public class RegionSettings : ScriptableObject
     {
-        
-    }
+        public List<FlowGroupSettings> regionFlowGroups;
 
-    // Update is called once per frame
-    void Update()
-    {
         
+        
+        public int initialPopulation;
     }
 }
+

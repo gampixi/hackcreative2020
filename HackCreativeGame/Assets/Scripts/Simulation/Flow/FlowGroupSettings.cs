@@ -2,17 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlowGroupSettings : MonoBehaviour
+namespace Game.Simulation
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(fileName = "NewFlowGroupSettings", menuName = "Custom Game Data/Flow Group Settings", order = 1)]
+    public class FlowGroupSettings : ScriptableObject
     {
-        
+        public FlowGroupKind kind;
+
+        [System.Serializable]
+        public class TransmitData
+        {
+            public FlowGroupKind target;
+            public float transmitProbability;
+        }
+
+        public List<TransmitData> transmitProbabilities;
+        public float healProbability;
+        public float deathProbability;
+        public float initialPopulationProportion;
+        public float travelProbability;
     }
 
-    // Update is called once per frame
-    void Update()
+    public enum FlowGroupKind
     {
-        
+        Worker,
+        Unemployed,
+        Anarchist
     }
 }

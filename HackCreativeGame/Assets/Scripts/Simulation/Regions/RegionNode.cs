@@ -67,7 +67,7 @@ namespace Game.Simulation
                 // Šobrīd pieņemam ka galamērķu sadalījums ir konstants
                 foreach (var neighbor in neighbors)
                 {
-                    Debug.Log($"From {gameObject.name} to {neighbor.gameObject.name} with {travelersPerNeighbor}");
+                    //Debug.Log($"From {gameObject.name} to {neighbor.gameObject.name} with {travelersPerNeighbor}");
                     var neighborGroup = neighbor.population.FirstOrDefault(x => x.Settings.kind == group.Settings.kind);
                     neighborGroup.population += travelersPerNeighbor;
                     group.population -= travelersPerNeighbor;

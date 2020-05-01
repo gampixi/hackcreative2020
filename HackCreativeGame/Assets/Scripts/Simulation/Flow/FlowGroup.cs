@@ -39,23 +39,12 @@ namespace Game.Simulation
 
         public void PerformInternalChanges()
         {
-            var recoveredToHealthy = Mathf.RoundToInt(population.recovered * ValueForProbability(Settings.immunityLossProbability));
-            population.recovered -= recoveredToHealthy;
-            population.healthy += recoveredToHealthy;
-            var toSymptomatic = Mathf.RoundToInt(population.asymptomatic * ValueForProbability(Settings.symptomaticProbability));
-            var symptomaticToRecovered = Mathf.RoundToInt(population.symptomatic * ValueForProbability(Settings.recoverProbability));
-            var asymptomaticToRecovered = Mathf.RoundToInt(
-                (population.asymptomatic-toSymptomatic) * ValueForProbability(Settings.recoverProbability));
-            population.asymptomatic -= toSymptomatic;
-            population.symptomatic += toSymptomatic;
-            population.symptomatic -= symptomaticToRecovered;
-            population.recovered += symptomaticToRecovered;
-            population.asymptomatic -= asymptomaticToRecovered;
-            population.recovered += asymptomaticToRecovered;
-            var symtopmaticDied = Mathf.RoundToInt(population.symptomatic * ValueForProbability(Settings.deathProbability));
-            var asymtopmaticDied = Mathf.RoundToInt(population.asymptomatic * ValueForProbability(Settings.deathProbability));
-            population.symptomatic -= symtopmaticDied;
-            population.asymptomatic -= asymtopmaticDied;
+            ProbabilityFlow(Settings.immunityLossProbability, ref population.recovered, ref population.healthy);
+            ProbabilityFlow(Settings.symptomaticProbability, ref population.asymptomatic, ref population.symptomatic);
+            ProbabilityFlow(Settings.recoverProbability, ref population.asymptomatic, ref population.recovered);
+            ProbabilityFlow(Settings.recoverProbability, ref population.symptomatic, ref population.recovered);
+            ProbabilitySink(Settings.deathProbability, ref population.symptomatic);
+            ProbabilitySink(Settings.deathProbability, ref population.asymptomatic);
         }
     }
 }

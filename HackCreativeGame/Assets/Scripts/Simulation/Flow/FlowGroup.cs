@@ -9,7 +9,6 @@ namespace Game.Simulation
     {
         public FlowGroupSettings Settings { get; private set; }
         public Population population;
-        private Population _populationTransition;
         public int Infected => population.symptomatic + population.asymptomatic;
 
         public FlowGroup(FlowGroupSettings settings, int regionPopulation)
@@ -19,16 +18,24 @@ namespace Game.Simulation
             {
                 healthy = Mathf.RoundToInt(regionPopulation * settings.initialPopulationProportion)
             };
-            _populationTransition = new Population();
         }
 
-        public void CalculateInternalChanges()
+        public void PerformInternalChanges()
         {
             var toSymptomatic = Mathf.RoundToInt(population.asymptomatic * ValueForProbability(Settings.symptomaticProbability));
             var symptomaticToRecovered = Mathf.RoundToInt(population.symptomatic * ValueForProbability(Settings.recoverProbability));
             var asymptomaticToRecovered = Mathf.RoundToInt(
-                (population.asymptomatic-population.symptomatic) * ValueForProbability(Settings.recoverProbability));
-            //var 
+                (population.asymptomatic-toSymptomatic) * ValueForProbability(Settings.recoverProbability));
+            population.healthy -= toSymptomatic;
+            population.asymptomatic += toSymptomatic;
+            population.symptomatic -= symptomaticToRecovered;
+            population.recovered += symptomaticToRecovered;
+            population.asymptomatic -= asymptomaticToRecovered;
+            population.recovered += asymptomaticToRecovered;
+            var symtopmaticDied = Mathf.RoundToInt(population.symptomatic * ValueForProbability(Settings.deathProbability));
+            var asymtopmaticDied = Mathf.RoundToInt(population.asymptomatic * ValueForProbability(Settings.deathProbability));
+            population.symptomatic -= symtopmaticDied;
+            population.asymptomatic -= asymtopmaticDied;
         }
     }
 }

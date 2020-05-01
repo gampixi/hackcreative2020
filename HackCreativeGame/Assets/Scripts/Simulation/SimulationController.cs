@@ -22,11 +22,10 @@ namespace Game.Simulation
             // Calculations should be done before actually manipulating the data
             // so no weird side effects happen
             // Order should be kept: healing -> internal transmission -> travel
-            regions.ForEach(x => x.population.ForEach(p =>
-            {
-                p.PerformInternalChanges();
-                
-            }));
+            regions.ForEach(x => {
+                x.population.ForEach(p => p.PerformInternalChanges());
+                x.PerformInternalTransmission();
+            });
         }
     }
 }

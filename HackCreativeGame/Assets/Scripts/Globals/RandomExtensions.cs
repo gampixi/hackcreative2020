@@ -10,7 +10,7 @@ namespace Game.Utilities
     {
         public static float ValueForProbability(float probability, float power = 5)
         {
-            return (Mathf.Approximately(probability, 0))
+            return (probability > 0.00001f)
                 ? Random.Range(Mathf.Pow(probability, power), (float)Math.Pow(probability, 1f/power))
                 : 0;
         }

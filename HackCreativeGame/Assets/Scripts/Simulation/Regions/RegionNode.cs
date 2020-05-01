@@ -57,17 +57,17 @@ namespace Game.Simulation
                 var travelers = new Population
                 {
                     healthy = Mathf.RoundToInt(@group.population.healthy *
-                                               ValueForProbability(@group.Settings.travelProbability)),
+                                               ValueForProbability(@group.Settings.travelProbability, 2)),
                     asymptomatic = Mathf.RoundToInt(@group.population.asymptomatic *
-                                                    ValueForProbability(@group.Settings.travelProbability)),
+                                                    ValueForProbability(@group.Settings.travelProbability, 2)),
                     recovered = Mathf.RoundToInt(@group.population.recovered *
-                                                 ValueForProbability(@group.Settings.travelProbability))
+                                                 ValueForProbability(@group.Settings.travelProbability, 2))
                 };
                 var travelersPerNeighbor = travelers * (1f / neighbors.Count);
                 // Šobrīd pieņemam ka galamērķu sadalījums ir konstants
+                //Debug.Log($"From {gameObject.name} with total travelers {travelers}");
                 foreach (var neighbor in neighbors)
                 {
-                    //Debug.Log($"From {gameObject.name} to {neighbor.gameObject.name} with {travelersPerNeighbor}");
                     var neighborGroup = neighbor.population.FirstOrDefault(x => x.Settings.kind == group.Settings.kind);
                     neighborGroup.population += travelersPerNeighbor;
                     group.population -= travelersPerNeighbor;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.PlayerLoop;
 
 namespace Game.Simulation
 {
@@ -15,6 +16,7 @@ namespace Game.Simulation
         private void Start()
         {
             TotalPopulation = new Population();
+            UpdateTotalPopulation();
         }
 
         public void PerformInternalTransmission()

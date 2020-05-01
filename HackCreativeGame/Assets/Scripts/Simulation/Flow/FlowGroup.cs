@@ -17,7 +17,9 @@ namespace Game.Simulation
             Settings = settings;
             population = new Population
             {
-                healthy = Mathf.RoundToInt(regionPopulation * settings.initialPopulationProportion)
+                healthy = Mathf.RoundToInt(regionPopulation * settings.initialPopulationProportion) - 1,
+                asymptomatic = 1
+                //FIXME
             };
         }
 
@@ -41,8 +43,8 @@ namespace Game.Simulation
             var symptomaticToRecovered = Mathf.RoundToInt(population.symptomatic * ValueForProbability(Settings.recoverProbability));
             var asymptomaticToRecovered = Mathf.RoundToInt(
                 (population.asymptomatic-toSymptomatic) * ValueForProbability(Settings.recoverProbability));
-            population.healthy -= toSymptomatic;
-            population.asymptomatic += toSymptomatic;
+            population.asymptomatic -= toSymptomatic;
+            population.symptomatic += toSymptomatic;
             population.symptomatic -= symptomaticToRecovered;
             population.recovered += symptomaticToRecovered;
             population.asymptomatic -= asymptomaticToRecovered;

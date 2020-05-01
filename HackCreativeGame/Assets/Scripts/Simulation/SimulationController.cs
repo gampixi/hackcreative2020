@@ -7,10 +7,16 @@ namespace Game.Simulation
 {
     public class SimulationController : MonoBehaviour
     {
+        public static SimulationController Instance;
         public List<RegionNode> regions;
 
         private void Start()
         {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+
             regions.ForEach(x => x.InitializeRegion());
         }
 
@@ -25,6 +31,7 @@ namespace Game.Simulation
             regions.ForEach(x => {
                 x.population.ForEach(p => p.PerformInternalChanges());
                 x.PerformInternalTransmission();
+                x.UpdateTotalPopulation();
             });
         }
     }

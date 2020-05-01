@@ -1,18 +1,22 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameTickManager : MonoBehaviour
+namespace Game.Simulation
 {
-    // Start is called before the first frame update
-    void Start()
+    public class GameTickManager : MonoBehaviour
     {
+        public float tickTime = 1;
+        private float _nextTickTime = 1;
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Update()
+        {
+            if (Time.time > _nextTickTime)
+            {
+                SimulationController.Instance.TickForward();
+                _nextTickTime += tickTime;
+            }
+        }
     }
 }

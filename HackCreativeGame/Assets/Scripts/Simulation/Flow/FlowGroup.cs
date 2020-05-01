@@ -10,6 +10,7 @@ namespace Game.Simulation
         public FlowGroupSettings Settings { get; private set; }
         public Population population;
         public int Infected => population.symptomatic + population.asymptomatic;
+        private int FutureInfectedCount = 0;
 
         public FlowGroup(FlowGroupSettings settings, int regionPopulation)
         {
@@ -18,6 +19,20 @@ namespace Game.Simulation
             {
                 healthy = Mathf.RoundToInt(regionPopulation * settings.initialPopulationProportion)
             };
+        }
+
+        public void CalculateFutureInfected(int count)
+        {
+            FutureInfectedCount += (count > population.healthy) 
+                ? population.healthy
+                : count;
+        }
+
+        public void Infect()
+        {
+            population.healthy -= FutureInfectedCount;
+            population.asymptomatic += FutureInfectedCount;
+            FutureInfectedCount = 0;
         }
 
         public void PerformInternalChanges()

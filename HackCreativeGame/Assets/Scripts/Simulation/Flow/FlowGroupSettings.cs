@@ -17,7 +17,8 @@ namespace Game.Simulation
         }
 
         public List<TransmitData> transmitProbabilities;
-        public float healProbability;
+        public float symptomaticProbability;
+        public float recoverProbability;
         public float deathProbability;
         public float initialPopulationProportion;
         public float travelProbability;

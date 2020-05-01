@@ -1,18 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RegionNode : MonoBehaviour
+namespace Game.Simulation
 {
-    // Start is called before the first frame update
-    void Start()
+    public class RegionNode : MonoBehaviour
     {
-        
-    }
+        public RegionSettings settings;
+        public List<FlowGroup> population;
+        public List<RegionNode> neighbors;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void InitializeRegion()
+        {
+            population = settings.InitialFlows();
+        }
     }
 }
+

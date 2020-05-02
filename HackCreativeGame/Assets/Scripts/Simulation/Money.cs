@@ -36,8 +36,8 @@ namespace Assets.Scripts.Simulation
                     {
                         positive *= -1;
                     }
-                    var negative = population.Settings.TaxPerTurn
-                        * (population.population.symptomatic) * -1;
+                    var negative = population.Settings.TaxPerTurnSymptomatic
+                        * (population.population.symptomatic);
                     Amount += positive + negative;
                 }
             }

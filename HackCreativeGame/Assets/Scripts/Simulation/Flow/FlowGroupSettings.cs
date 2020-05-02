@@ -90,6 +90,14 @@ namespace Game.Simulation
         {
             get { return taxPerTurn * SimulationController.Instance.benefits.GetOrSetFlowData(kind).taxMultiplier; }
         }
+        
+        [SerializeField]
+        private float taxPerTurnSymptomatic;
+
+        public float TaxPerTurnSymptomatic
+        {
+            get { return taxPerTurnSymptomatic * SimulationController.Instance.benefits.GetOrSetFlowData(kind).taxMultiplier; }
+        }
     }
 
     public enum FlowGroupKind

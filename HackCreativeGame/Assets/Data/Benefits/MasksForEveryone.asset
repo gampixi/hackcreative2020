@@ -14,15 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Everyone Gets Masks
   Description: YAY!
-  PricePerHealthy: 1
-  PricePerKnownSick: 2
+  PricePerHealthy: 0.01
+  PricePerKnownSick: 0.02
   FlowData:
   - target: 0
     infectProbability: 0.1
     happinessMultiplier: 1
+    taxMultiplier: 0
   - target: 1
     infectProbability: 0.1
     happinessMultiplier: 1
+    taxMultiplier: 0
   - target: 2
     infectProbability: 0.1
     happinessMultiplier: 1
+    taxMultiplier: 0

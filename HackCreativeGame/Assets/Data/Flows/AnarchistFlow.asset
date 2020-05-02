@@ -33,3 +33,5 @@ MonoBehaviour:
   immunityLossProbability: 0.05
   happinessPerCapita: 0
   happinessPerSymptomatic: -1
+  taxPerTurn: -0.3
+  taxPerTurnSymptomatic: -0.2

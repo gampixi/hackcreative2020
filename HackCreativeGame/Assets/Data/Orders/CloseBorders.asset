@@ -12,8 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ccaa5dfb7bed0488175876dc697063, type: 3}
   m_Name: CloseBorders
   m_EditorClassIdentifier: 
-  Title: 
-  Description: 
+  Title: Close borders
+  Description: Borders closed, keys lost
   PricePerHealthy: 0
   PricePerKnownSick: 0
-  FlowData: []
+  FlowData:
+  - target: 5
+    infectProbability: 1
+    happinessMultiplier: 0.85
+    unhappinessMultiplier: 1
+    taxMultiplier: 1
+    symptomaticMultiplier: 1
+    deathMultiplier: 1
+    recoverMultiplier: 1
+    travelMultiplier: 0.65
+    immunityLossMultiplier: 1
+    transmitMultipliers: []

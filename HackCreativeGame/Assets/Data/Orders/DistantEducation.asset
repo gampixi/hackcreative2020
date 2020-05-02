@@ -12,8 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ccaa5dfb7bed0488175876dc697063, type: 3}
   m_Name: DistantEducation
   m_EditorClassIdentifier: 
-  Title: 
-  Description: 
+  Title: Distant education
+  Description: Teacher needed no more
   PricePerHealthy: 0
   PricePerKnownSick: 0
-  FlowData: []
+  FlowData:
+  - target: 6
+    infectProbability: 0.7
+    happinessMultiplier: 1.3
+    unhappinessMultiplier: 1
+    taxMultiplier: 1
+    symptomaticMultiplier: 1
+    deathMultiplier: 1
+    recoverMultiplier: 1
+    travelMultiplier: 1
+    immunityLossMultiplier: 1
+    transmitMultipliers: []
+  - target: 0
+    infectProbability: 0.7
+    happinessMultiplier: 1.3
+    unhappinessMultiplier: 1
+    taxMultiplier: 1
+    symptomaticMultiplier: 1
+    deathMultiplier: 1
+    recoverMultiplier: 1
+    travelMultiplier: 1
+    immunityLossMultiplier: 1
+    transmitMultipliers: []

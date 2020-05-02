@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Complete Lockdown
   Description: Stay safe, stay home
-  PricePerHealthy: 0
-  PricePerKnownSick: 0
+  PricePerHealthy: 0.01
+  PricePerKnownSick: 0.01
   FlowData:
   - target: 0
     infectProbability: 0.001

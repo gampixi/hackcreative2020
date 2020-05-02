@@ -28,6 +28,7 @@ public class UiBenefitWindow : MonoBehaviour
             var item = Instantiate(listItemPrefab, act ? activeList : inactiveList, false);
             var frag = item.GetComponent<UiBenefitListFragment>();
             frag.Initialize(x, this, act);
+            _currentList.Add(item);
         });
     }
 

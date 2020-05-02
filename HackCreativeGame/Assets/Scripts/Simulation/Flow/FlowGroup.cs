@@ -29,7 +29,7 @@ namespace Game.Simulation
 
         public double GetHappiness()
         {
-            return Settings.HappinessPerCapita * (population.healthy + population.recovered + population.asymptomatic)
+            return Settings.HappinessPerCapita * (population.healthy + population.asymptomatic)
                    + Settings.HappinessPerCapita * population.symptomatic;
         }
 

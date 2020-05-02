@@ -23,8 +23,6 @@ namespace Game.Simulation
             regions.ForEach(x => x.InitializeRegion());
         }
 
-        //public 
-        
         [ContextMenu("Tick Forward")]
         public void TickForward()
         {
@@ -36,6 +34,7 @@ namespace Game.Simulation
             regions.ForEach(x => {
                 x.population.ForEach(p => p.PerformInternalChanges());
                 x.PerformInternalTransmission();
+                x.PerformInternalFlowChange();
                 x.PerformTravel();
             });
             

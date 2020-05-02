@@ -51,6 +51,11 @@ namespace Game.Simulation
             population.ForEach(x => x.Infect());
         }
 
+        public void PerformInternalFlowChange()
+        {
+            //TODO
+        }
+
         public void PerformTravel()
         {
             foreach (var group in population)

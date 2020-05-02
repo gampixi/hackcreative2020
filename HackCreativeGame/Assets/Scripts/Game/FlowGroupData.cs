@@ -1,4 +1,5 @@
 ﻿using Game.Simulation;
+using System.Collections.Generic;
 
 namespace Game
 {
@@ -10,6 +11,7 @@ namespace Game
         public float happinessMultiplier = 1f;
         public float unhappinessMultiplier = 1f;
         public float taxMultiplier = 1f;
+        public List<TransmitProbabilityMultiplier> transmitMultipliers;
         public FlowGroupData(FlowGroupKind target)
         {
             this.target = target;

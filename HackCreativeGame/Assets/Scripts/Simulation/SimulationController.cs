@@ -15,6 +15,7 @@ namespace Game.Simulation
         public BenefitProvider benefits;
         public Happiness happiness;
         public Statistics statistics = new Statistics();
+        public SimulationGraphicsController graphics;
 
         private void Awake()
         {
@@ -49,6 +50,7 @@ namespace Game.Simulation
             });
             happiness.CalculateHappiness();
             statistics.Calculate();
+            graphics.UpdateGraphics();
         }
     }
 }

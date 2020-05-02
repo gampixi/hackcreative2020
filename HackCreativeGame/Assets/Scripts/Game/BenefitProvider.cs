@@ -15,10 +15,21 @@ public class BenefitProvider : MonoBehaviour
     public void Add(Benefit benefit)
     {
         Benefits.Add(benefit);
+        CalculateFlowData();
     }
+    
+    public void Remove(Benefit benefit)
+    {
+        var result = Benefits.Remove(benefit);
+        Debug.Log($"Removing {benefit.Title} result {result}");
+        CalculateFlowData();
+    }
+
+    public bool Active(Benefit benefit) => Benefits.Contains(benefit);
 
     public void CalculateFlowData()
     {
+        FlowGroupsData.ForEach(x => x.Reset());
         foreach (var item in Benefits)
         {
             foreach (var data in item.FlowData)

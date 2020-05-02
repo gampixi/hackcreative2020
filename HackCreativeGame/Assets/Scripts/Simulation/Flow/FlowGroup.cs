@@ -17,9 +17,8 @@ namespace Game.Simulation
             Settings = settings;
             population = new Population
             {
-                healthy = Mathf.RoundToInt(regionPopulation * settings.initialPopulationProportion) - 1,
+                healthy = Mathf.RoundToInt(regionPopulation) - 1,
                 asymptomatic = 1
-                //FIXME
             };
         }
 

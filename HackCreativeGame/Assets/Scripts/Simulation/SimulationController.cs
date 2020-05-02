@@ -9,17 +9,21 @@ namespace Game.Simulation
     public class SimulationController : MonoBehaviour
     {
         public static SimulationController Instance;
+        public GameDatabase data;
         public List<RegionNode> regions;
         public BenefitProvider benefits;
         public Happiness happiness;
 
-        private void Start()
+        private void Awake()
         {
             if (Instance == null)
             {
                 Instance = this;
             }
+        }
 
+        private void Start()
+        {
             Random.InitState(Guid.NewGuid().GetHashCode());
             regions.ForEach(x => x.InitializeRegion());
         }
@@ -27,8 +31,6 @@ namespace Game.Simulation
         [ContextMenu("Tick Forward")]
         public void TickForward()
         {
-            benefits.CalculateFlowData();
-            
             // Calculations should be done before actually manipulating the data
             // so no weird side effects happen
             // Order should be kept: healing -> internal transmission -> travel

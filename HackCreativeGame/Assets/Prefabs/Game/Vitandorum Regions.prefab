@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2259167529589352265}
   - component: {fileID: 2259167529589352262}
   m_Layer: 0
-  m_Name: slice16@2x
+  m_Name: Impesict
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 2259167529597365739}
   - component: {fileID: 2259167529597365736}
   m_Layer: 0
-  m_Name: slice14@2x
+  m_Name: Imagunum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 2259167529798614369}
   - component: {fileID: 2259167529798614398}
   m_Layer: 0
-  m_Name: slice15@2x
+  m_Name: Irentex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 2259167529802738985}
   - component: {fileID: 2259167529802738982}
   m_Layer: 0
-  m_Name: slice19@2x
+  m_Name: City - Noderles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 2259167529803572638}
   - component: {fileID: 2259167529803572639}
   m_Layer: 0
-  m_Name: slice11@2x
+  m_Name: Antaulax
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -591,7 +591,7 @@ GameObject:
   - component: {fileID: 2259167529979870838}
   - component: {fileID: 2259167529979870839}
   m_Layer: 0
-  m_Name: slice8@2x
+  m_Name: Virnaus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -706,7 +706,7 @@ GameObject:
   - component: {fileID: 2259167530001340999}
   - component: {fileID: 2259167530001340996}
   m_Layer: 0
-  m_Name: slice4@2x
+  m_Name: Unbelag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -822,7 +822,7 @@ GameObject:
   - component: {fileID: 2259167530034338717}
   - component: {fileID: 2259167530034338714}
   m_Layer: 0
-  m_Name: slice9@2x
+  m_Name: Elfadin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -938,7 +938,7 @@ GameObject:
   - component: {fileID: 2259167530066896524}
   - component: {fileID: 2259167530066896525}
   m_Layer: 0
-  m_Name: slice13@2x
+  m_Name: Ernautila
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1051,7 +1051,7 @@ GameObject:
   - component: {fileID: 2259167530416763695}
   - component: {fileID: 2259167530416763692}
   m_Layer: 0
-  m_Name: slice18@2x
+  m_Name: Entaurug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1167,7 +1167,7 @@ GameObject:
   - component: {fileID: 2259167530423555847}
   - component: {fileID: 2259167530423555844}
   m_Layer: 0
-  m_Name: slice2@2x
+  m_Name: City - Xentilabus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1285,7 +1285,7 @@ GameObject:
   - component: {fileID: 2259167530451870458}
   - component: {fileID: 2259167530451870459}
   m_Layer: 0
-  m_Name: slice7@2x
+  m_Name: Evuinar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1398,7 +1398,7 @@ GameObject:
   - component: {fileID: 2259167530536810278}
   - component: {fileID: 2259167530536810279}
   m_Layer: 0
-  m_Name: slice17@2x
+  m_Name: Estrix
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1512,7 +1512,7 @@ GameObject:
   - component: {fileID: 2259167530570083147}
   - component: {fileID: 2259167530570083144}
   m_Layer: 0
-  m_Name: slice5@2x
+  m_Name: Intaverg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1625,7 +1625,7 @@ GameObject:
   - component: {fileID: 2259167530857260971}
   - component: {fileID: 2259167530857260968}
   m_Layer: 0
-  m_Name: slice10@2x
+  m_Name: Vimerila
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1742,7 +1742,7 @@ GameObject:
   - component: {fileID: 2259167530944513016}
   - component: {fileID: 2259167530944513017}
   m_Layer: 0
-  m_Name: slice12@2x
+  m_Name: Cantilauf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1866,7 +1866,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2259167530992130635}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.35645986, y: -4.460695, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1906,7 +1906,7 @@ GameObject:
   - component: {fileID: 2259167531054153216}
   - component: {fileID: 2259167531054153217}
   m_Layer: 0
-  m_Name: slice20@2x
+  m_Name: Eveumb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2021,7 +2021,7 @@ GameObject:
   - component: {fileID: 2259167531212302170}
   - component: {fileID: 2259167531212302171}
   m_Layer: 0
-  m_Name: slice3@2x
+  m_Name: Axerdin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2135,7 +2135,7 @@ GameObject:
   - component: {fileID: 2259167531239046470}
   - component: {fileID: 2259167531239046471}
   m_Layer: 0
-  m_Name: slice1@2x
+  m_Name: Ertimbag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2248,7 +2248,7 @@ GameObject:
   - component: {fileID: 2259167531483931999}
   - component: {fileID: 2259167531483931996}
   m_Layer: 0
-  m_Name: slice6@2x
+  m_Name: City - Trenies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -53,22 +53,24 @@ namespace Game.Simulation
 
         public void PerformInternalFlowChange()
         {
-            foreach (var item in settings.transmitFlowSettings)
+            foreach (var flowGroup in population)
             {
-                var sourceGroup = population.FirstOrDefault(x => x.Settings.kind == item.source);
-                var targetGroup = population.FirstOrDefault(x => x.Settings.kind == item.target);
-                var travelers = new Population
+                foreach (var item in flowGroup.Settings.transmitFlowSettings)
                 {
-                    healthy = Mathf.RoundToInt(sourceGroup.population.healthy *
-                                              ValueForProbability(item.transmitProbability, 2)),
-                    asymptomatic = Mathf.RoundToInt(sourceGroup.population.asymptomatic *
-                                                   ValueForProbability(item.transmitProbability, 2)),
-                    recovered = Mathf.RoundToInt(sourceGroup.population.recovered *
-                                                ValueForProbability(item.transmitProbability, 2))
-                };
+                    var targetGroup = population.FirstOrDefault(x => x.Settings.kind == item.target);
+                    var travelers = new Population
+                    {
+                        healthy = Mathf.RoundToInt(flowGroup.population.healthy *
+                                                  ValueForProbability(item.transmitProbability, 2)),
+                        asymptomatic = Mathf.RoundToInt(flowGroup.population.asymptomatic *
+                                                       ValueForProbability(item.transmitProbability, 2)),
+                        recovered = Mathf.RoundToInt(flowGroup.population.recovered *
+                                                    ValueForProbability(item.transmitProbability, 2))
+                    };
 
-                sourceGroup.population -= travelers;
-                targetGroup.population += travelers;
+                    flowGroup.population -= travelers;
+                    targetGroup.population += travelers;
+                }
             }
         }
 

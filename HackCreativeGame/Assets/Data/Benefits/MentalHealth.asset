@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ccaa5dfb7bed0488175876dc697063, type: 3}
+  m_Name: MentalHealth
+  m_EditorClassIdentifier: 
+  Title: Provide access to mental health and counselling resources
+  Description: Mental recovery
+  PricePerHealthy: 0
+  PricePerKnownSick: 0
+  FlowData:
+  - target: 0
+    infectProbability: 1
+    happinessMultiplier: 1.3
+    unhappinessMultiplier: 1
+    taxMultiplier: 1
+    symptomaticMultiplier: 1
+    deathMultiplier: 1
+    recoverMultiplier: 1
+    travelMultiplier: 1
+    immunityLossMultiplier: 1
+    transmitMultipliers: []
+  - target: 1
+    infectProbability: 1
+    happinessMultiplier: 1.3
+    unhappinessMultiplier: 1
+    taxMultiplier: 1
+    symptomaticMultiplier: 1
+    deathMultiplier: 1
+    recoverMultiplier: 1
+    travelMultiplier: 1
+    immunityLossMultiplier: 1
+    transmitMultipliers: []
+  - target: 2
+    infectProbability: 1
+    happinessMultiplier: 1.3
+    unhappinessMultiplier: 1
+    taxMultiplier: 1
+    symptomaticMultiplier: 1
+    deathMultiplier: 1
+    recoverMultiplier: 1
+    travelMultiplier: 1
+    immunityLossMultiplier: 1
+    transmitMultipliers: []
+  - target: 3
+    infectProbability: 1
+    happinessMultiplier: 1.3
+    unhappinessMultiplier: 1
+    taxMultiplier: 1
+    symptomaticMultiplier: 1
+    deathMultiplier: 1
+    recoverMultiplier: 1
+    travelMultiplier: 1
+    immunityLossMultiplier: 1
+    transmitMultipliers: []
+  - target: 4
+    infectProbability: 1
+    happinessMultiplier: 1.3
+    unhappinessMultiplier: 1
+    taxMultiplier: 1
+    symptomaticMultiplier: 1
+    deathMultiplier: 1
+    recoverMultiplier: 1
+    travelMultiplier: 1
+    immunityLossMultiplier: 1
+    transmitMultipliers: []
+  - target: 5
+    infectProbability: 1
+    happinessMultiplier: 1.3
+    unhappinessMultiplier: 1
+    taxMultiplier: 1
+    symptomaticMultiplier: 1
+    deathMultiplier: 1
+    recoverMultiplier: 1
+    travelMultiplier: 1
+    immunityLossMultiplier: 1
+    transmitMultipliers: []
+  - target: 6
+    infectProbability: 1
+    happinessMultiplier: 1.3
+    unhappinessMultiplier: 0.8
+    taxMultiplier: 1
+    symptomaticMultiplier: 1
+    deathMultiplier: 1
+    recoverMultiplier: 1
+    travelMultiplier: 1
+    immunityLossMultiplier: 1
+    transmitMultipliers: []
+  - target: 7
+    infectProbability: 1
+    happinessMultiplier: 1.3
+    unhappinessMultiplier: 0.9
+    taxMultiplier: 1
+    symptomaticMultiplier: 1
+    deathMultiplier: 1
+    recoverMultiplier: 1
+    travelMultiplier: 1
+    immunityLossMultiplier: 1
+    transmitMultipliers: []

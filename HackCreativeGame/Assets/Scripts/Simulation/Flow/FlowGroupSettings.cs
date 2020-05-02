@@ -104,6 +104,11 @@ namespace Game.Simulation
     {
         Worker,
         Unemployed,
-        Anarchist
+        Anarchist,
+        Medic,
+        Police,
+        Wealthy,
+        Students,
+        Retired,
     }
 }

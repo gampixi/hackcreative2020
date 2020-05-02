@@ -5,8 +5,12 @@ using UnityEngine;
 namespace Game
 {
     [CreateAssetMenu(fileName = "NewBenefitSettings", menuName = "Custom Game Data/Benefit Settings", order = 1)]
-    public partial class Benefit : ScriptableObject
+    public class Benefit : ScriptableObject
     {
+        public string Title;
+        public string Description;
+        public float PricePerHealthy;
+        public float PricePerKnownSick;
         public List<FlowGroupData> FlowData;
     }
 }

@@ -16,4 +16,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5e610d17a697e6b4cbee3efe5da97b6e, type: 2}
   - {fileID: 11400000, guid: c1c6b81c1aacf6442bd8da8a1df24955, type: 2}
   - {fileID: 11400000, guid: 174422db276cb0345af38a9401b30422, type: 2}
+  - {fileID: 11400000, guid: 0f76213fd1961114ba114e42ed861c7a, type: 2}
+  - {fileID: 11400000, guid: daf171a09ad853c459e2a1b63f5eb19e, type: 2}
+  - {fileID: 11400000, guid: 980cd6054f7942f42b087327fd996052, type: 2}
+  - {fileID: 11400000, guid: 6a0052f112820ef4aa3b4a1e9fbb0362, type: 2}
+  - {fileID: 11400000, guid: bc6fab41cc82e814fbf82e4de914a7e0, type: 2}
   initialPopulation: 100000
+  travelDensity: 1

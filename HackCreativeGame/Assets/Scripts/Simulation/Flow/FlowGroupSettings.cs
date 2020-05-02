@@ -80,7 +80,7 @@ namespace Game.Simulation
         private float happinessPerSymptomatic;
         public float HappinessPerSymptomatic
         {
-            get { return happinessPerSymptomatic * SimulationController.Instance.benefits.GetOrSetFlowData(kind).happinessMultiplier; }
+            get { return happinessPerSymptomatic * SimulationController.Instance.benefits.GetOrSetFlowData(kind).unhappinessMultiplier; }
         }
 
         [SerializeField]

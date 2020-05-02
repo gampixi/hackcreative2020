@@ -26,7 +26,17 @@ MonoBehaviour:
     transmitProbability: 0.03
   - target: 2
     transmitProbability: 0.03
-  symptomaticProbability: 0.2
+  - target: 3
+    transmitProbability: 0.03
+  - target: 4
+    transmitProbability: 0.03
+  - target: 5
+    transmitProbability: 0.03
+  - target: 6
+    transmitProbability: 0.03
+  - target: 7
+    transmitProbability: 0.03
+  symptomaticProbability: 0.08
   recoverProbability: 0.0001
   deathProbability: 0.00005
   travelProbability: 0.1

@@ -38,9 +38,18 @@ namespace Game.Simulation
         {
             if (!_firstTick)
             {
+                //Set infection region zero
+                StartInfection();
                 TickForward();
                 _firstTick = true;
             }
+        }
+
+        public void StartInfection()
+        {
+            var region = regions[Random.Range(0, regions.Count)];
+            region.InfectRandomly(10);
+            Debug.Log($"Infection starts in {region.regionName}");
         }
 
         [ContextMenu("Tick Forward")]

@@ -8,6 +8,7 @@ namespace Game.Simulation
 {
     public class RegionNode : MonoBehaviour
     {
+        public string regionName = "Coney Island";
         public RegionSettings settings;
         public List<FlowGroup> population;
         public List<RegionNode> neighbors;
@@ -17,6 +18,16 @@ namespace Game.Simulation
         {
             TotalPopulation = new Population();
             UpdateTotalPopulation();
+        }
+
+        public void InfectRandomly(int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                var group = population[Random.Range(0, population.Count)];
+                group.CalculateFutureInfected(2);
+                group.Infect();
+            }
         }
 
         public void PerformInternalTransmission()

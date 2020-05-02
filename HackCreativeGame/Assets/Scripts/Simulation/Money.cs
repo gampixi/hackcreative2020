@@ -8,8 +8,9 @@ namespace Assets.Scripts.Simulation
     {
         public float Amount { get; private set; } = 1000;
 
-        public void CalculateBenefitTax()
+        public float CalculateBenefitTax()
         {
+            var amount = 0f;
             var benefits = SimulationController.Instance.benefits;
             foreach (var item in benefits.Get())
             {
@@ -17,12 +18,14 @@ namespace Assets.Scripts.Simulation
                     * (SimulationController.Instance.statistics.TotalHealthy 
                         + SimulationController.Instance.statistics.TotalRecovered);
                 var pricePerSick = item.PricePerKnownSick * SimulationController.Instance.statistics.TotalSymptomatic;
-                Amount -= (pricePerHealthy + pricePerSick);
+                amount -= (pricePerHealthy + pricePerSick);
             }
+            return amount;
         }
 
-        public void CalculateWorkFlowTax()
+        public float CalculateWorkFlowTax()
         {
+            var amount = 0f;
             foreach (var regions in SimulationController.Instance.regions)
             {
                 foreach (var population in regions.population)
@@ -38,15 +41,21 @@ namespace Assets.Scripts.Simulation
                     }
                     var negative = population.Settings.TaxPerTurnSymptomatic
                         * (population.population.symptomatic);
-                    Amount += positive + negative;
+                    amount += positive + negative;
                 }
             }
+            return amount;
         }
 
         internal void CalculateTax()
         {
-            CalculateBenefitTax();
-            CalculateWorkFlowTax();
+            Amount += CalculateBenefitTax();
+            Amount += CalculateWorkFlowTax();
+        }
+
+        public float CalculateFutureSpending()
+        {
+            return CalculateBenefitTax() + CalculateWorkFlowTax();
         }
     }
 }

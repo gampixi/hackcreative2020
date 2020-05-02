@@ -22,7 +22,7 @@ MonoBehaviour:
     impactFromHappiness: -100
     source: 5
     target: 2
-  initialPopulationProportion: 4
+  initialPopulationProportion: 1
   transmitProbabilities:
   - target: 0
     transmitProbability: 0.03

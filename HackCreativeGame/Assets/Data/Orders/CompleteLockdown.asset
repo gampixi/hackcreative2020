@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ccaa5dfb7bed0488175876dc697063, type: 3}
+  m_Name: CompleteLockdown
+  m_EditorClassIdentifier: 
+  Title: Complete Lockdown
+  Description: Stay safe, stay home
+  PricePerHealthy: 0
+  PricePerKnownSick: 0
+  FlowData:
+  - target: 0
+    infectProbability: 0.001
+    happinessMultiplier: -1
+    unhappinessMultiplier: 2
+    taxMultiplier: 1
+    symptomaticMultiplier: 1
+    deathMultiplier: 1
+    recoverMultiplier: 1
+    travelMultiplier: 0
+    immunityLossMultiplier: 1
+    transmitMultipliers: []
+  - target: 1
+    infectProbability: 0.001
+    happinessMultiplier: -0.5
+    unhappinessMultiplier: 2
+    taxMultiplier: 1
+    symptomaticMultiplier: 1
+    deathMultiplier: 1
+    recoverMultiplier: 1
+    travelMultiplier: 0
+    immunityLossMultiplier: 1
+    transmitMultipliers: []
+  - target: 2
+    infectProbability: 0.001
+    happinessMultiplier: -0.2
+    unhappinessMultiplier: 2
+    taxMultiplier: 1
+    symptomaticMultiplier: 1
+    deathMultiplier: 1
+    recoverMultiplier: 1
+    travelMultiplier: 0
+    immunityLossMultiplier: 1
+    transmitMultipliers: []
+  - target: 3
+    infectProbability: 0.001
+    happinessMultiplier: 0
+    unhappinessMultiplier: 2
+    taxMultiplier: 1
+    symptomaticMultiplier: 1
+    deathMultiplier: 1
+    recoverMultiplier: 1
+    travelMultiplier: 0
+    immunityLossMultiplier: 1
+    transmitMultipliers: []
+  - target: 4
+    infectProbability: 0.001
+    happinessMultiplier: 0
+    unhappinessMultiplier: 2
+    taxMultiplier: 1
+    symptomaticMultiplier: 1
+    deathMultiplier: 1
+    recoverMultiplier: 1
+    travelMultiplier: 0
+    immunityLossMultiplier: 1
+    transmitMultipliers: []
+  - target: 5
+    infectProbability: 0.001
+    happinessMultiplier: -3
+    unhappinessMultiplier: 2
+    taxMultiplier: 1
+    symptomaticMultiplier: 1
+    deathMultiplier: 1
+    recoverMultiplier: 1
+    travelMultiplier: 0
+    immunityLossMultiplier: 1
+    transmitMultipliers: []
+  - target: 6
+    infectProbability: 0.001
+    happinessMultiplier: 0.5
+    unhappinessMultiplier: 2
+    taxMultiplier: 1
+    symptomaticMultiplier: 1
+    deathMultiplier: 1
+    recoverMultiplier: 1
+    travelMultiplier: 0
+    immunityLossMultiplier: 1
+    transmitMultipliers: []
+  - target: 7
+    infectProbability: 0.001
+    happinessMultiplier: 1
+    unhappinessMultiplier: 1
+    taxMultiplier: 1
+    symptomaticMultiplier: 1
+    deathMultiplier: 1
+    recoverMultiplier: 1
+    travelMultiplier: 0
+    immunityLossMultiplier: 1
+    transmitMultipliers: []

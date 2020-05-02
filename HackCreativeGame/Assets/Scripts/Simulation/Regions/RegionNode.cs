@@ -53,7 +53,25 @@ namespace Game.Simulation
 
         public void PerformInternalFlowChange()
         {
-            //TODO
+            foreach (var flowGroup in population)
+            {
+                foreach (var item in flowGroup.Settings.transmitFlowSettings)
+                {
+                    var targetGroup = population.FirstOrDefault(x => x.Settings.kind == item.target);
+                    var travelers = new Population
+                    {
+                        healthy = Mathf.RoundToInt(flowGroup.population.healthy *
+                                                  ValueForProbability(item.transmitProbability, 2)),
+                        asymptomatic = Mathf.RoundToInt(flowGroup.population.asymptomatic *
+                                                       ValueForProbability(item.transmitProbability, 2)),
+                        recovered = Mathf.RoundToInt(flowGroup.population.recovered *
+                                                    ValueForProbability(item.transmitProbability, 2))
+                    };
+
+                    flowGroup.population -= travelers;
+                    targetGroup.population += travelers;
+                }
+            }
         }
 
         public void PerformTravel()

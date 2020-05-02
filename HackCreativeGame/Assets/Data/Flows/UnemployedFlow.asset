@@ -27,4 +27,4 @@ MonoBehaviour:
   travelProbability: 0.1
   immunityLossProbability: 0.05
   happinessPerCapita: 0.3
-  happinessPerSymptomatic: -0.1
+  happinessPerSymptomatic: -0.6

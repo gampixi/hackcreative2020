@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ccaa5dfb7bed0488175876dc697063, type: 3}
   m_Name: MasksForEveryone
   m_EditorClassIdentifier: 
+  Title: Everyone Gets Masks
+  Description: YAY!
+  PricePerHealthy: 1
+  PricePerKnownSick: 2
   FlowData:
   - target: 0
     infectProbability: 0.1

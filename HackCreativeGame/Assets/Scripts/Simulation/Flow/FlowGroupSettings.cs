@@ -97,31 +97,31 @@ namespace Game.Simulation
         {
             // For now they are simple getters, but in the future
             // the getters might ask BenefitProvider what multipliers to apply
-            get { return symptomaticProbability; }
+            get { return symptomaticProbability * SimulationController.Instance.benefits.GetOrSetFlowData(kind).symptomaticMultiplier; }
         }
         [SerializeField]
         float recoverProbability;
         public float RecoverProbability
         {
-            get { return recoverProbability; }
+            get { return recoverProbability * SimulationController.Instance.benefits.GetOrSetFlowData(kind).recoverMultiplier; }
         }
         [SerializeField]
         private float deathProbability;
         public float DeathProbability
         {
-            get { return deathProbability; }
+            get { return deathProbability * SimulationController.Instance.benefits.GetOrSetFlowData(kind).deathMultiplier; }
         }
         [SerializeField]
         private float travelProbability;
         public float TravelProbability
         {
-            get { return travelProbability; }
+            get { return travelProbability * SimulationController.Instance.benefits.GetOrSetFlowData(kind).travelMultiplier; }
         }
         [SerializeField]
         private float immunityLossProbability;
         public float ImmunityLossProbability
         {
-            get { return immunityLossProbability; }
+            get { return immunityLossProbability * SimulationController.Instance.benefits.GetOrSetFlowData(kind).immunityLossMultiplier; }
         }
 
         [SerializeField]

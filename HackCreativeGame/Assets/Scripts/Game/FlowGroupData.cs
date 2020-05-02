@@ -13,6 +13,11 @@ namespace Game
         public float happinessMultiplier = 1f;
         public float unhappinessMultiplier = 1f;
         public float taxMultiplier = 1f;
+        public float symptomaticMultiplier = 1f;
+        public float deathMultiplier = 1f;
+        public float recoverMultiplier = 1f;
+        public float travelMultiplier = 1f;
+        public float immunityLossMultiplier = 1f;
         public List<TransmitProbabilityMultiplier> transmitMultipliers = new List<TransmitProbabilityMultiplier>();
         public FlowGroupData(FlowGroupKind target)
         {
@@ -33,6 +38,11 @@ namespace Game
             happinessMultiplier = 1f;
             unhappinessMultiplier = 1f;
             taxMultiplier = 1f;
+            symptomaticMultiplier = 1f;
+            deathMultiplier = 1f;
+            recoverMultiplier = 1f;
+            travelMultiplier = 1f;
+            immunityLossMultiplier = 1f;
             transmitMultipliers.Clear();
             foreach (var kind in (FlowGroupKind[]) Enum.GetValues(typeof(FlowGroupKind)))
             {

@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using static Game.Benefit;
 
 public class BenefitProvider : MonoBehaviour
 {

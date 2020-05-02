@@ -33,6 +33,16 @@ namespace Game.Simulation
             regions.ForEach(x => x.InitializeRegion());
         }
 
+        private bool _firstTick = false;
+        private void LateUpdate()
+        {
+            if (!_firstTick)
+            {
+                TickForward();
+                _firstTick = true;
+            }
+        }
+
         [ContextMenu("Tick Forward")]
         public void TickForward()
         {

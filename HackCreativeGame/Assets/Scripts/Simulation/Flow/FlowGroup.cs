@@ -28,6 +28,12 @@ namespace Game.Simulation
             FutureInfectedCount += count;
         }
 
+        public double GetHappiness()
+        {
+            return Settings.HappinessPerCapita * (population.healthy + population.recovered + population.asymptomatic)
+                   + Settings.HappinessPerCapita * population.symptomatic;
+        }
+
         public void Infect()
         {
             if (FutureInfectedCount > population.healthy)

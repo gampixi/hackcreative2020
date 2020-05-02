@@ -11,6 +11,7 @@ namespace Game.Simulation
         public static SimulationController Instance;
         public List<RegionNode> regions;
         public BenefitProvider benefits;
+        public Happiness happiness;
 
         private void Start()
         {
@@ -42,6 +43,7 @@ namespace Game.Simulation
             {
                 x.UpdateTotalPopulation();
             });
+            happiness.CalculateHappiness();
         }
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2634531133522952194}
   - component: {fileID: 285999293}
   - component: {fileID: 2893661860720730736}
+  - component: {fileID: 5226567138859378733}
   m_Layer: 0
   m_Name: Simulation Controller
   m_TagString: Untagged
@@ -49,6 +50,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   benefits: {fileID: 2893661860720730736}
+  happiness: {fileID: 5226567138859378733}
 --- !u!114 &285999293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,4 +76,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7feebe000fe64f14a8eac2474f252784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FlowGroupsData: []
+  Benefits: []
+--- !u!114 &5226567138859378733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2634531133522952195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009726281ffbcc74fa91a420d7496a81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

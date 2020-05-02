@@ -9,6 +9,7 @@ public class Population
     public int symptomatic;
     public int asymptomatic;
     public int recovered;
+    public long Total => healthy + symptomatic + asymptomatic + recovered;
 
     public static Population operator+(Population a, Population b)
     {

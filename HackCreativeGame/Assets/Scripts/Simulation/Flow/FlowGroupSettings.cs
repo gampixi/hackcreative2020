@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Game.Simulation
 {
@@ -54,6 +55,20 @@ namespace Game.Simulation
         public float ImmunityLossProbability
         {
             get { return immunityLossProbability; }
+        }
+
+        [SerializeField]
+        private float happinessPerCapita;
+        
+        public float HappinessPerCapita
+        {
+            get { return happinessPerCapita * SimulationController.Instance.benefits.GetOrSetFlowData(kind).happinessMultiplier; }
+        }
+        [SerializeField]
+        private float happinessPerSymptomatic;
+        public float HappinessPerSymptomatic
+        {
+            get { return happinessPerSymptomatic * SimulationController.Instance.benefits.GetOrSetFlowData(kind).happinessMultiplier; }
         }
     }
 

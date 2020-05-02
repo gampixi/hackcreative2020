@@ -20,9 +20,9 @@ MonoBehaviour:
   - target: 1
     transmitProbability: 0.3
   - target: 2
-    transmitProbability: 0.3
-  symptomaticProbability: 0.7
-  recoverProbability: 0.2
-  deathProbability: 0.1
-  travelProbability: 0.2
-  immunityLossProbability: 0.3
+    transmitProbability: 0.7
+  symptomaticProbability: 0.2
+  recoverProbability: 0.01
+  deathProbability: 0.005
+  travelProbability: 0.1
+  immunityLossProbability: 0.05

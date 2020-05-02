@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Game.Simulation
 {
@@ -18,6 +19,7 @@ namespace Game.Simulation
                 Instance = this;
             }
 
+            Random.InitState(Guid.NewGuid().GetHashCode());
             regions.ForEach(x => x.InitializeRegion());
         }
 

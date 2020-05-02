@@ -48,8 +48,8 @@ namespace Game.Simulation
             ProbabilityFlow(Settings.SymptomaticProbability, ref population.asymptomatic, ref population.symptomatic);
             ProbabilityFlow(Settings.RecoverProbability, ref population.asymptomatic, ref population.recovered);
             ProbabilityFlow(Settings.RecoverProbability, ref population.symptomatic, ref population.recovered);
-            ProbabilitySink(Settings.DeathProbability, ref population.symptomatic);
-            ProbabilitySink(Settings.DeathProbability, ref population.asymptomatic);
+            ProbabilitySink(Settings.DeathProbability, ref population.symptomatic, 0.005f);
+            ProbabilitySink(Settings.DeathProbability, ref population.asymptomatic, 0.005f);
         }
     }
 }

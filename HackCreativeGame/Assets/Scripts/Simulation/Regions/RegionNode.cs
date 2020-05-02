@@ -76,6 +76,7 @@ namespace Game.Simulation
 
         public void PerformTravel()
         {
+            var travelDensitySum = neighbors.Sum(x => x.settings.TravelDensity);
             foreach (var group in population)
             {
                 var travelers = new Population
@@ -87,14 +88,12 @@ namespace Game.Simulation
                     recovered = Mathf.RoundToInt(@group.population.recovered *
                                                  ValueForProbability(@group.Settings.TravelProbability, 2))
                 };
-                var travelersPerNeighbor = travelers * (1f / neighbors.Count);
-                // Šobrīd pieņemam ka galamērķu sadalījums ir konstants
-                //Debug.Log($"From {gameObject.name} with total travelers {travelers}");
                 foreach (var neighbor in neighbors)
                 {
                     var neighborGroup = neighbor.population.FirstOrDefault(x => x.Settings.kind == group.Settings.kind);
-                    neighborGroup.population += travelersPerNeighbor;
-                    group.population -= travelersPerNeighbor;
+                    var travelersToThis = travelers * (neighbor.settings.TravelDensity / travelDensitySum);
+                    neighborGroup.population += travelersToThis;
+                    group.population -= travelersToThis;
                 }
             }
         }

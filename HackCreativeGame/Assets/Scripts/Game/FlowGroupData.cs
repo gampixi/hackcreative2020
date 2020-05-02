@@ -12,5 +12,11 @@ namespace Game
         {
             this.target = target;
         }
+
+        public void Reset()
+        {
+            infectProbability = 1f;
+            happinessMultiplier = 1f;
+        }
     }
 }    

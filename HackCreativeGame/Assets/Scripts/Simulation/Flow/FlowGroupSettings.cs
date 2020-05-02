@@ -13,16 +13,46 @@ namespace Game.Simulation
         public class TransmitData
         {
             public FlowGroupKind target;
-            public float transmitProbability;
+            [SerializeField]
+            private float transmitProbability;
+            public float TransmitProbability => ProbabilityMath.ProbabilityMultiplier(transmitProbability, SimulationController.Instance.benefits.GetDataForKind(target).infectProbability);
         }
 
-        public List<TransmitData> transmitProbabilities;
-        public float symptomaticProbability;
-        public float recoverProbability;
-        public float deathProbability;
         public float initialPopulationProportion;
-        public float travelProbability;
-        public float immunityLossProbability;
+        
+        public List<TransmitData> transmitProbabilities;
+        [SerializeField]
+        private float symptomaticProbability;
+        public float SymptomaticProbability
+        {
+            // For now they are simple getters, but in the future
+            // the getters might ask BenefitProvider what multipliers to apply
+            get { return symptomaticProbability; }
+        }
+        [SerializeField]
+        float recoverProbability;
+        public float RecoverProbability
+        {
+            get { return recoverProbability; }
+        }
+        [SerializeField]
+        private float deathProbability;
+        public float DeathProbability
+        {
+            get { return deathProbability; }
+        }
+        [SerializeField]
+        private float travelProbability;
+        public float TravelProbability
+        {
+            get { return travelProbability; }
+        }
+        [SerializeField]
+        private float immunityLossProbability;
+        public float ImmunityLossProbability
+        {
+            get { return immunityLossProbability; }
+        }
     }
 
     public enum FlowGroupKind

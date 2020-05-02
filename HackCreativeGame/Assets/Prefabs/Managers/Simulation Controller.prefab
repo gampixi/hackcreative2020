@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2634531133522952193}
   - component: {fileID: 2634531133522952194}
+  - component: {fileID: 285999293}
+  - component: {fileID: 2893661860720730736}
   m_Layer: 0
   m_Name: Simulation Controller
   m_TagString: Untagged
@@ -46,3 +48,30 @@ MonoBehaviour:
   regions:
   - {fileID: 0}
   - {fileID: 0}
+  benefits: {fileID: 2893661860720730736}
+--- !u!114 &285999293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2634531133522952195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46529e044a19a674b8bd22244fa7e325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tickTime: 1
+--- !u!114 &2893661860720730736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2634531133522952195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7feebe000fe64f14a8eac2474f252784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FlowGroupsData: []

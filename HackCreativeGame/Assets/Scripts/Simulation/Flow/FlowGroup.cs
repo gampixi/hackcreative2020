@@ -39,12 +39,12 @@ namespace Game.Simulation
 
         public void PerformInternalChanges()
         {
-            ProbabilityFlow(Settings.immunityLossProbability, ref population.recovered, ref population.healthy);
-            ProbabilityFlow(Settings.symptomaticProbability, ref population.asymptomatic, ref population.symptomatic);
-            ProbabilityFlow(Settings.recoverProbability, ref population.asymptomatic, ref population.recovered);
-            ProbabilityFlow(Settings.recoverProbability, ref population.symptomatic, ref population.recovered);
-            ProbabilitySink(Settings.deathProbability, ref population.symptomatic);
-            ProbabilitySink(Settings.deathProbability, ref population.asymptomatic);
+            ProbabilityFlow(Settings.ImmunityLossProbability, ref population.recovered, ref population.healthy);
+            ProbabilityFlow(Settings.SymptomaticProbability, ref population.asymptomatic, ref population.symptomatic);
+            ProbabilityFlow(Settings.RecoverProbability, ref population.asymptomatic, ref population.recovered);
+            ProbabilityFlow(Settings.RecoverProbability, ref population.symptomatic, ref population.recovered);
+            ProbabilitySink(Settings.DeathProbability, ref population.symptomatic);
+            ProbabilitySink(Settings.DeathProbability, ref population.asymptomatic);
         }
     }
 }

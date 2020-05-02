@@ -9,6 +9,7 @@ namespace Game.Simulation
     {
         public static SimulationController Instance;
         public List<RegionNode> regions;
+        public BenefitProvider benefits;
 
         private void Start()
         {
@@ -25,6 +26,8 @@ namespace Game.Simulation
         [ContextMenu("Tick Forward")]
         public void TickForward()
         {
+            benefits.CalculateFlowData();
+            
             // Calculations should be done before actually manipulating the data
             // so no weird side effects happen
             // Order should be kept: healing -> internal transmission -> travel

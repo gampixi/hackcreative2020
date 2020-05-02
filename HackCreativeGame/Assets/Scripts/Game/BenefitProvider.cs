@@ -1,4 +1,5 @@
-﻿using Game;
+﻿using System;
+using Game;
 using Game.Simulation;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,13 +8,24 @@ using UnityEngine;
 
 public class BenefitProvider : MonoBehaviour
 {
-    private List<Benefit> Benefits;
+    [SerializeField]
+    private List<Benefit> Benefits = new List<Benefit>();
     public void Add(Benefit benefit)
     {
         Benefits.Add(benefit);
     }
 
-    public List<FlowGroupData> FlowGroupsData = new List<FlowGroupData>();
+    private List<FlowGroupData> FlowGroupsData = new List<FlowGroupData>();
+
+    private void Start()
+    {
+        // Initialize flowgroupsdata as an empty thingy
+        foreach (FlowGroupKind kind in (FlowGroupKind[]) Enum.GetValues(typeof(FlowGroupKind)))
+        {
+            var flowGroupElement = new FlowGroupData(kind);
+            FlowGroupsData.Add(flowGroupElement);
+        }
+    }
 
     public void CalculateFlowData()
     {
@@ -28,10 +40,16 @@ public class BenefitProvider : MonoBehaviour
                     flowGroupElement = new FlowGroupData(data.target);
                     FlowGroupsData.Add(flowGroupElement);
                 }
+                flowGroupElement.Reset();
                 flowGroupElement.happinessMultiplier *= data.happinessMultiplier;
                 flowGroupElement.infectProbability *= data.infectProbability;
             }
         }
+    }
+
+    public FlowGroupData GetDataForKind(FlowGroupKind kind)
+    {
+        return FlowGroupsData.FirstOrDefault(x => x.target == kind);
     }
 }
 

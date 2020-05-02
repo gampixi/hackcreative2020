@@ -29,7 +29,7 @@ namespace Game.Simulation
                     var targetGroup = population.FirstOrDefault(x => x.Settings.kind == probability.target);
                     if (targetGroup != null)
                     {
-                        var possibleInfectedPeopleCount = probability.transmitProbability * group.Infected;
+                        var possibleInfectedPeopleCount = probability.TransmitProbability * group.Infected;
                         var range = Random.Range(0, possibleInfectedPeopleCount);
                         if (possibleInfectedPeopleCount < 1)
                         {
@@ -57,11 +57,11 @@ namespace Game.Simulation
                 var travelers = new Population
                 {
                     healthy = Mathf.RoundToInt(@group.population.healthy *
-                                               ValueForProbability(@group.Settings.travelProbability, 2)),
+                                               ValueForProbability(@group.Settings.TravelProbability, 2)),
                     asymptomatic = Mathf.RoundToInt(@group.population.asymptomatic *
-                                                    ValueForProbability(@group.Settings.travelProbability, 2)),
+                                                    ValueForProbability(@group.Settings.TravelProbability, 2)),
                     recovered = Mathf.RoundToInt(@group.population.recovered *
-                                                 ValueForProbability(@group.Settings.travelProbability, 2))
+                                                 ValueForProbability(@group.Settings.TravelProbability, 2))
                 };
                 var travelersPerNeighbor = travelers * (1f / neighbors.Count);
                 // Šobrīd pieņemam ka galamērķu sadalījums ir konstants

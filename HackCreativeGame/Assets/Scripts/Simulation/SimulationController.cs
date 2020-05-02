@@ -17,6 +17,7 @@ namespace Game.Simulation
         public Happiness happiness;
         public Money money;
         public Statistics statistics;
+        public SimulationGraphicsController graphics;
 
         private void Awake()
         {
@@ -51,6 +52,7 @@ namespace Game.Simulation
             });
             happiness.CalculateHappiness();
             statistics.Calculate();
+            graphics.UpdateGraphics();
         }
     }
 }

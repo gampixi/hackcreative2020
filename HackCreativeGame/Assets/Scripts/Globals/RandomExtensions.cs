@@ -17,10 +17,10 @@ namespace Game.Utilities
 
         public static void ProbabilityFlow(float probability, ref int source, ref int target)
         {
-            var flowAmount = Mathf.RoundToInt(source * ValueForProbability(probability));
+            var flowAmount = Mathf.RoundToInt(source * ValueForProbability(probability, 2));
             if (flowAmount < 1)
             {
-                if (Random.value < probability)
+                if (Random.value < 0.1f)
                 {
                     flowAmount = 1;
                 }
@@ -33,12 +33,12 @@ namespace Game.Utilities
             target += flowAmount;
         }
         
-        public static void ProbabilitySink(float probability, ref int source)
+        public static void ProbabilitySink(float probability, ref int source, float smallValueProbability = 0.1f)
         {
-            var flowAmount = Mathf.RoundToInt(source * ValueForProbability(probability));
+            var flowAmount = Mathf.RoundToInt(source * ValueForProbability(probability, 2));
             if (flowAmount < 1)
             {
-                if (Random.value < probability)
+                if (Random.value < smallValueProbability)
                 {
                     flowAmount = 1;
                 }

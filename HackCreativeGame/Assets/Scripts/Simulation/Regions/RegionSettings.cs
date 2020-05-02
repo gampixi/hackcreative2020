@@ -10,6 +10,11 @@ namespace Game.Simulation
     {
         public List<FlowGroupSettings> regionFlowGroups;
         public int initialPopulation;
+        
+        [SerializeField]
+        private float travelDensity = 1;
+
+        public float TravelDensity => travelDensity; //TODO: Change density per region from benefits
 
         public List<FlowGroup> InitialFlows()
         {

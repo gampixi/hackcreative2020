@@ -13,17 +13,22 @@ MonoBehaviour:
   m_Name: AnarchistFlow
   m_EditorClassIdentifier: 
   kind: 2
+  transmitFlowSettings:
+  - transmitProbability: 0.001
+    target: 0
+  - transmitProbability: 0.001
+    target: 1
   initialPopulationProportion: 0.2
   transmitProbabilities:
   - target: 0
-    transmitProbability: 0.1
+    transmitProbability: 0.03
   - target: 1
-    transmitProbability: 0.3
+    transmitProbability: 0.03
   - target: 2
-    transmitProbability: 0.5
+    transmitProbability: 0.03
   symptomaticProbability: 0.2
-  recoverProbability: 0.01
-  deathProbability: 0.005
+  recoverProbability: 0.0001
+  deathProbability: 0.00005
   travelProbability: 0.1
   immunityLossProbability: 0.05
   happinessPerCapita: 0

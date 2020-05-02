@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,6 +14,7 @@ namespace Game.Simulation
         public List<RegionNode> regions;
         public BenefitProvider benefits;
         public Happiness happiness;
+        public Statistics statistics;
 
         private void Awake()
         {
@@ -46,6 +48,7 @@ namespace Game.Simulation
                 x.UpdateTotalPopulation();
             });
             happiness.CalculateHappiness();
+            statistics.Calculate();
         }
     }
 }

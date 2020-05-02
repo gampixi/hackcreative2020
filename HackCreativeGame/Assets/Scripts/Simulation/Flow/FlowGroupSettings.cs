@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -9,8 +10,6 @@ namespace Game.Simulation
     public class FlowGroupSettings : ScriptableObject
     {
         public FlowGroupKind kind;
-        public List<TransmitFlowSettings> transmitFlowSettings;
-
 
         [System.Serializable]
         public class TransmitData
@@ -23,8 +22,31 @@ namespace Game.Simulation
                     SimulationController.Instance.benefits.GetOrSetFlowData(target).infectProbability);
         }
 
+        private List<TransmitSettings> transmitFlowSettings;
+
+        public List<TransmitSettings> TransmitFlowSettings
+        {
+            get
+            {
+                var list = transmitFlowSettings.Where(x => x.target == kind)
+                    .ToList();
+                foreach (var item in list)
+                {
+                    var transmitMultipliers = SimulationController.Instance.benefits
+                        .GetOrSetFlowData(kind)
+                        .transmitMultipliers;
+                    foreach (var multipliers in transmitMultipliers)
+                    {
+                        item.transmitProbability *= multipliers.transmitMultiplier;
+                    }
+                }
+
+                return list;
+            }
+        }
+
         [System.Serializable]
-        public class TransmitFlowSettings
+        public class TransmitSettings
         {
             [SerializeField]
             public float transmitProbability;

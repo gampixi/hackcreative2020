@@ -60,6 +60,7 @@ namespace Game.Simulation
             {
                 x.UpdateTotalPopulation();
             });
+
             happiness.CalculateHappiness();
             statistics.Calculate();
             graphics.UpdateGraphics();

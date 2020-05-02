@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Game.FlowGroupData;
 
 namespace Game
 {
@@ -12,5 +13,6 @@ namespace Game
         public float PricePerHealthy;
         public float PricePerKnownSick;
         public List<FlowGroupData> FlowData;
+        public List<TransmitProbabilityMultiplier> transmitProbabilityMultipliers;
     }
 }

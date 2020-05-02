@@ -29,7 +29,9 @@ namespace Game.Simulation
                     var targetGroup = population.FirstOrDefault(x => x.Settings.kind == probability.target);
                     if (targetGroup != null)
                     {
-                        var possibleInfectedPeopleCount = probability.TransmitProbability * group.Infected * (1f+Mathf.Log(group.population.healthy+1f, 15));
+                        var possibleInfectedPeopleCount = probability.TransmitProbability 
+                            * group.Infected 
+                            * (1f+Mathf.Log(group.population.healthy+1f, 15));
                         //var possibleInfectedPeopleCount = probability.TransmitProbability * group.Infected;
                         var range = Random.Range(0, possibleInfectedPeopleCount);
                         if (possibleInfectedPeopleCount < 1)
@@ -55,7 +57,7 @@ namespace Game.Simulation
         {
             foreach (var flowGroup in population)
             {
-                foreach (var item in flowGroup.Settings.transmitFlowSettings)
+                foreach (var item in flowGroup.Settings.TransmitFlowSettings)
                 {
                     var targetGroup = population.FirstOrDefault(x => x.Settings.kind == item.target);
                     var travelers = new Population

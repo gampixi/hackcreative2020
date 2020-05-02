@@ -13,9 +13,18 @@ MonoBehaviour:
   m_Name: Database
   m_EditorClassIdentifier: 
   benefits:
-  - {fileID: 11400000, guid: 80540c4eec98a5c4587c83b396d6e315, type: 2}
-  - {fileID: 11400000, guid: 445d36ec5922da34d8f59bce5cc1ba85, type: 2}
   - {fileID: 11400000, guid: 41b001b78076b634f96c1f19fd54af4c, type: 2}
+  - {fileID: 11400000, guid: 055bc83b788c716409f6bf9d30afcbd2, type: 2}
+  - {fileID: 11400000, guid: fd95516338db42647839fe3464f9263b, type: 2}
+  - {fileID: 11400000, guid: 445d36ec5922da34d8f59bce5cc1ba85, type: 2}
+  - {fileID: 11400000, guid: 80540c4eec98a5c4587c83b396d6e315, type: 2}
+  - {fileID: 11400000, guid: 4921d7ae9b765bb4ba4fa97d8819c693, type: 2}
+  - {fileID: 11400000, guid: 7556966bdde495747be27bb201601254, type: 2}
+  - {fileID: 11400000, guid: 9ac68068ccaa70c4fba69ebe94dea232, type: 2}
   orders:
+  - {fileID: 11400000, guid: c794bd67bc1204b49a5d19eb934f1afc, type: 2}
+  - {fileID: 11400000, guid: f53d20527f1f5e54793f309553558dce, type: 2}
+  - {fileID: 11400000, guid: 17cf3b41703509e4f826d69b2d274126, type: 2}
   - {fileID: 11400000, guid: ed296cd42d64a6142811068b6f3855e8, type: 2}
+  - {fileID: 11400000, guid: fb18562c9d07e5e429b92c63f8db644c, type: 2}
   - {fileID: 11400000, guid: 8c3cdd8b13129af4592e8b3bbaeb79b9, type: 2}

@@ -29,7 +29,8 @@ namespace Game.Simulation
                     var targetGroup = population.FirstOrDefault(x => x.Settings.kind == probability.target);
                     if (targetGroup != null)
                     {
-                        var possibleInfectedPeopleCount = probability.TransmitProbability * group.Infected;
+                        var possibleInfectedPeopleCount = probability.TransmitProbability * group.Infected * (1f+Mathf.Log(group.population.healthy+1f, 15));
+                        //var possibleInfectedPeopleCount = probability.TransmitProbability * group.Infected;
                         var range = Random.Range(0, possibleInfectedPeopleCount);
                         if (possibleInfectedPeopleCount < 1)
                         {

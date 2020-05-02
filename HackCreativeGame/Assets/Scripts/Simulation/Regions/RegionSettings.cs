@@ -13,8 +13,10 @@ namespace Game.Simulation
 
         public List<FlowGroup> InitialFlows()
         {
+            var proprtionSum = 0f;
             var pop = new List<FlowGroup>();
-            regionFlowGroups.ForEach(x => pop.Add(new FlowGroup(x, initialPopulation)));
+            regionFlowGroups.ForEach(x => proprtionSum += x.initialPopulationProportion);
+            regionFlowGroups.ForEach(x => pop.Add(new FlowGroup(x, Mathf.RoundToInt((float)initialPopulation * (x.initialPopulationProportion/proprtionSum)))));
             return pop;
         }
     }

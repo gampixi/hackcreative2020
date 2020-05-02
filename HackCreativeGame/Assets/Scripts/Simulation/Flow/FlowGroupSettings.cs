@@ -15,7 +15,9 @@ namespace Game.Simulation
             public FlowGroupKind target;
             [SerializeField]
             private float transmitProbability;
-            public float TransmitProbability => ProbabilityMath.ProbabilityMultiplier(transmitProbability, SimulationController.Instance.benefits.GetDataForKind(target).infectProbability);
+            public float TransmitProbability => ProbabilityMath
+                .ProbabilityMultiplier(transmitProbability, 
+                    SimulationController.Instance.benefits.GetOrSetFlowData(target).infectProbability);
         }
 
         public float initialPopulationProportion;

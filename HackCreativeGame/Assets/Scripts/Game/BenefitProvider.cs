@@ -10,21 +10,11 @@ public class BenefitProvider : MonoBehaviour
 {
     [SerializeField]
     private List<Benefit> Benefits = new List<Benefit>();
+    private List<FlowGroupData> FlowGroupsData = new List<FlowGroupData>();
+
     public void Add(Benefit benefit)
     {
         Benefits.Add(benefit);
-    }
-
-    private List<FlowGroupData> FlowGroupsData = new List<FlowGroupData>();
-
-    private void Start()
-    {
-        // Initialize flowgroupsdata as an empty thingy
-        foreach (FlowGroupKind kind in (FlowGroupKind[]) Enum.GetValues(typeof(FlowGroupKind)))
-        {
-            var flowGroupElement = new FlowGroupData(kind);
-            FlowGroupsData.Add(flowGroupElement);
-        }
     }
 
     public void CalculateFlowData()
@@ -33,24 +23,26 @@ public class BenefitProvider : MonoBehaviour
         {
             foreach (var data in item.FlowData)
             {
-                var flowGroupElement = FlowGroupsData
-                    .FirstOrDefault(x => x.target == data.target);
-                if (flowGroupElement == null)
-                {
-                    flowGroupElement = new FlowGroupData(data.target);
-                    FlowGroupsData.Add(flowGroupElement);
-                }
-                flowGroupElement.Reset();
+                var flowGroupElement = GetOrSetFlowData(data.target);
                 flowGroupElement.happinessMultiplier *= data.happinessMultiplier;
                 flowGroupElement.infectProbability *= data.infectProbability;
             }
         }
     }
 
-    public FlowGroupData GetDataForKind(FlowGroupKind kind)
+    public FlowGroupData GetOrSetFlowData(FlowGroupKind flowGroupKind)
     {
-        return FlowGroupsData.FirstOrDefault(x => x.target == kind);
+        var flowGroupElement = FlowGroupsData
+                      .FirstOrDefault(x => x.target == flowGroupKind);
+        if (flowGroupElement == null)
+        {
+            flowGroupElement = new FlowGroupData(flowGroupKind);
+            FlowGroupsData.Add(flowGroupElement);
+        }
+
+        return flowGroupElement;
     }
+
 }
 
 

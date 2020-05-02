@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: AnarchistFlow
   m_EditorClassIdentifier: 
   kind: 2
-  initialPopulationProportion: 1
+  initialPopulationProportion: 0.2
   transmitProbabilities:
   - target: 0
-    transmitProbability: 0.3
+    transmitProbability: 0.1
   - target: 1
     transmitProbability: 0.3
   - target: 2
-    transmitProbability: 0.7
+    transmitProbability: 0.5
   symptomaticProbability: 0.2
   recoverProbability: 0.01
   deathProbability: 0.005

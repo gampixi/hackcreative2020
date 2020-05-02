@@ -25,13 +25,13 @@ namespace Game.Simulation
 
         public void CalculateFutureInfected(int count)
         {
-            FutureInfectedCount += (count > population.healthy) 
-                ? population.healthy
-                : count;
+            FutureInfectedCount += count;
         }
 
         public void Infect()
         {
+            if (FutureInfectedCount > population.healthy)
+                FutureInfectedCount = population.healthy;
             population.healthy -= FutureInfectedCount;
             population.asymptomatic += FutureInfectedCount;
             FutureInfectedCount = 0;

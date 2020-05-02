@@ -368,20 +368,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 302022236004042885, guid: 0ed942f6115c803449cafe5579bcfba8,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 515397967897765368, guid: 0ed942f6115c803449cafe5579bcfba8,
         type: 3}
       propertyPath: m_Name
       value: UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 844294073809341285, guid: 0ed942f6115c803449cafe5579bcfba8,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2199285395934873391, guid: 0ed942f6115c803449cafe5579bcfba8,
         type: 3}

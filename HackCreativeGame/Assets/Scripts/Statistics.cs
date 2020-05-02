@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class Statistics : MonoBehaviour
+public class Statistics
 {
     public int TotalRecovered { get; set; }
     public int TotalHealthy { get; set; }

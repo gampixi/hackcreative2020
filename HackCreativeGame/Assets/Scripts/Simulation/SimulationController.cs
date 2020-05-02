@@ -14,7 +14,7 @@ namespace Game.Simulation
         public List<RegionNode> regions;
         public BenefitProvider benefits;
         public Happiness happiness;
-        public Statistics statistics;
+        public Statistics statistics = new Statistics();
 
         private void Awake()
         {

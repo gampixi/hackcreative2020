@@ -15,8 +15,8 @@ namespace Game.Simulation
         public List<RegionNode> regions;
         public BenefitProvider benefits;
         public Happiness happiness;
-        public Money money;
-        public Statistics statistics;
+        public Money money = new Money();
+        public Statistics statistics = new Statistics();
         public SimulationGraphicsController graphics;
 
         private void Awake()

@@ -22,7 +22,7 @@ public class UiMainHud : MonoBehaviour
     {
         happiness.localScale = new Vector3(Mathf.Clamp((float)Instance.happiness.happiness, -1f, 1f), 1, 1);
         happinessImage.color = Instance.happiness.happiness < 0 ? positiveColor : negativeColor;
-        moneyText.text = $"001";
+        moneyText.text = Instance.money.Amount.ToString("N0");
         moneyChangeText.text = $"aaaa1";
         aliveText.text = Instance.statistics.TotalAlive.ToString();
         infectedText.text = Instance.statistics.TotalSymptomatic.ToString();

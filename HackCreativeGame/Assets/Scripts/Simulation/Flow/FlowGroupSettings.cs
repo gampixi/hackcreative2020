@@ -9,6 +9,8 @@ namespace Game.Simulation
     public class FlowGroupSettings : ScriptableObject
     {
         public FlowGroupKind kind;
+        public List<TransmitFlowSettings> transmitFlowSettings;
+
 
         [System.Serializable]
         public class TransmitData
@@ -19,6 +21,16 @@ namespace Game.Simulation
             public float TransmitProbability => ProbabilityMath
                 .ProbabilityMultiplier(transmitProbability, 
                     SimulationController.Instance.benefits.GetOrSetFlowData(target).infectProbability);
+        }
+
+        [System.Serializable]
+        public class TransmitFlowSettings
+        {
+            [SerializeField]
+            public float transmitProbability;
+
+            public FlowGroupKind target;
+
         }
 
         public float initialPopulationProportion;

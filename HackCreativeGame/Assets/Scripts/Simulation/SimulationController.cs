@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.Simulation;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,8 @@ namespace Game.Simulation
         public List<RegionNode> regions;
         public BenefitProvider benefits;
         public Happiness happiness;
-        public Statistics statistics = new Statistics();
+        public Money money;
+        public Statistics statistics;
         public SimulationGraphicsController graphics;
 
         private void Awake()

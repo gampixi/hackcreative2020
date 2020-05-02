@@ -8,6 +8,7 @@ namespace Game
         public FlowGroupKind target;
         public float infectProbability = 1f;
         public float happinessMultiplier = 1f;
+        public float taxMultiplier = 1f;
         public FlowGroupData(FlowGroupKind target)
         {
             this.target = target;
@@ -17,6 +18,7 @@ namespace Game
         {
             infectProbability = 1f;
             happinessMultiplier = 1f;
+            taxMultiplier = 1f;
         }
     }
 }    

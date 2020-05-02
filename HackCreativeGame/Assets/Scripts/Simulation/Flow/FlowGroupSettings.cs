@@ -82,6 +82,14 @@ namespace Game.Simulation
         {
             get { return happinessPerSymptomatic * SimulationController.Instance.benefits.GetOrSetFlowData(kind).happinessMultiplier; }
         }
+
+        [SerializeField]
+        private float taxPerTurn;
+
+        public float TaxPerTurn
+        {
+            get { return taxPerTurn * SimulationController.Instance.benefits.GetOrSetFlowData(kind).taxMultiplier; }
+        }
     }
 
     public enum FlowGroupKind

@@ -14,7 +14,7 @@ public class UiMainHud : MonoBehaviour
     private void Update()
     {
         happinessText.text = $"HAPPINESS: {Instance.happiness.happiness}";
-        moneyText.text = $"0€";
+        moneyText.text = $"{Instance.money.Amount}€";
         populationText.text = $"Alive: {Instance.statistics.TotalAlive} Inf: {Instance.statistics.TotalSymptomatic} Dead: {Instance.statistics.TotalDead}";
     }
 

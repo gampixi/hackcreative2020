@@ -12,6 +12,11 @@ public class BenefitProvider : MonoBehaviour
     private List<Benefit> Benefits = new List<Benefit>();
     private List<FlowGroupData> FlowGroupsData = new List<FlowGroupData>();
 
+    public List<Benefit> Get()
+    {
+        return Benefits;
+    }
+
     public void Add(Benefit benefit)
     {
         Benefits.Add(benefit);

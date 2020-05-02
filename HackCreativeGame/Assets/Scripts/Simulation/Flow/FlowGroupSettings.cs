@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -45,7 +46,7 @@ namespace Game.Simulation
         }
 
         [System.Serializable]
-        public class TransmitFlowSettings
+        public class TransmitSettings
         {
             [SerializeField]
             public float transmitProbability;

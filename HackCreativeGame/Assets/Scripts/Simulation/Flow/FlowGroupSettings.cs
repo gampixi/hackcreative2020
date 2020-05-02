@@ -56,16 +56,31 @@ namespace Game.Simulation
         {
             [SerializeField]
             private float transmitProbability;
+            public float impactFromHappiness; //Negative to boost when negative, positive to boost when positive
             public float TransmitProbability
             {
                 get
                 {
+                    var happinessMultiplier = 1f;
+                    if (impactFromHappiness > 0.000001f)
+                    {
+                        happinessMultiplier =
+                            (float)(1f + SimulationController.Instance.happiness.happiness * impactFromHappiness);
+                    }
+                    else if (impactFromHappiness < -0.000001f)
+                    {
+                        happinessMultiplier =
+                            (float)(1f + SimulationController.Instance.happiness.happiness * -impactFromHappiness);
+                    }
+                    //(float)(SimulationController.Instance.happiness.happiness >= 0f
+                    //    ? 1f + SimulationController.Instance.happiness.happiness * impactFromHappiness
+                    //    : 1f / (1 + -SimulationController.Instance.happiness.happiness * impactFromHappiness));
                     var transmitMultiplierData = SimulationController.Instance.benefits.GetOrSetFlowData(source)
                         .transmitMultipliers
                         .FirstOrDefault(x => x.target == target);
                     return ProbabilityMath
                         .ProbabilityMultiplier(transmitProbability,
-                            transmitMultiplierData?.transmitMultiplier ?? 1);
+                            (transmitMultiplierData?.transmitMultiplier ?? 1) * happinessMultiplier);
                 }
             }
 

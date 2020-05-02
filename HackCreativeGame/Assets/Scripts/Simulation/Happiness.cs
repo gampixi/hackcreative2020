@@ -17,5 +17,9 @@ public class Happiness : MonoBehaviour
             totalPopulation += p.population.Total;
         }));
         happiness /= (double) totalPopulation;
+        if (happiness > 1.0)
+            happiness = 1.0;
+        else if (happiness < -1.0)
+            happiness = -1.0;
     }
 }

@@ -20,7 +20,7 @@ namespace Game.Utilities
             var flowAmount = Mathf.RoundToInt(source * ValueForProbability(probability));
             if (flowAmount < 1)
             {
-                if (Random.value < probability)
+                if (Random.value < 0.25f)
                 {
                     flowAmount = 1;
                 }
@@ -38,7 +38,7 @@ namespace Game.Utilities
             var flowAmount = Mathf.RoundToInt(source * ValueForProbability(probability));
             if (flowAmount < 1)
             {
-                if (Random.value < probability)
+                if (Random.value < 0.25f)
                 {
                     flowAmount = 1;
                 }

@@ -1,5 +1,6 @@
 ﻿using Game.Simulation;
 using System;
+using UnityEngine;
 
 namespace Assets.Scripts.Simulation
 {
@@ -7,16 +8,15 @@ namespace Assets.Scripts.Simulation
     {
         public float Amount { get; private set; } = 1000;
 
-        private SimulationController simulationController = SimulationController.Instance;
         public void CalculateBenefitTax()
         {
-            var benefits = simulationController.benefits;
+            var benefits = SimulationController.Instance.benefits;
             foreach (var item in benefits.Get())
             {
                 var pricePerHealthy = item.PricePerHealthy 
-                    * (simulationController.statistics.TotalHealthy 
-                        + simulationController.statistics.TotalRecovered);
-                var pricePerSick = item.PricePerKnownSick * simulationController.statistics.TotalSymptomatic;
+                    * (SimulationController.Instance.statistics.TotalHealthy 
+                        + SimulationController.Instance.statistics.TotalRecovered);
+                var pricePerSick = item.PricePerKnownSick * SimulationController.Instance.statistics.TotalSymptomatic;
                 Amount -= (pricePerHealthy + pricePerSick);
             }
         }

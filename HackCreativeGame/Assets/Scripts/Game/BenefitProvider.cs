@@ -42,6 +42,7 @@ public class BenefitProvider : MonoBehaviour
                 var flowGroupElement = GetOrSetFlowData(data.target);
                 flowGroupElement.happinessMultiplier *= data.happinessMultiplier;
                 flowGroupElement.infectProbability *= data.infectProbability;
+                data.transmitMultipliers.ForEach(x => flowGroupElement.transmitMultipliers.FirstOrDefault(y => y.target == x.target).transmitMultiplier *= x.transmitMultiplier);
             }
         }
     }

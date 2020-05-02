@@ -13,6 +13,5 @@ namespace Game
         public float PricePerHealthy;
         public float PricePerKnownSick;
         public List<FlowGroupData> FlowData;
-        public List<TransmitProbabilityMultiplier> transmitProbabilityMultipliers;
     }
 }

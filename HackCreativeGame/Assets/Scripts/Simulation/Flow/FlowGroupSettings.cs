@@ -10,9 +10,15 @@ namespace Game.Simulation
     public class FlowGroupSettings : ScriptableObject
     {
         public FlowGroupKind kind;
-        private List<TransmitSettings> transmitFlowSettings;
+        //[SerializeField]
+        public List<TransmitSettings> transmitFlowSettings;
 
-        public List<TransmitSettings> TransmitFlowSettings
+        [ContextMenu("Fill Flow Transmit Source")]
+        public void FillSource()
+        {
+            transmitFlowSettings.ForEach(x => x.source = kind);
+        }
+        /*public List<TransmitSettings> TransmitFlowSettings
         {
             get
             {
@@ -31,7 +37,7 @@ namespace Game.Simulation
 
                 return list;
             }
-        }
+        }*/
 
 
         [System.Serializable]
@@ -49,10 +55,22 @@ namespace Game.Simulation
         public class TransmitSettings
         {
             [SerializeField]
-            public float transmitProbability;
+            private float transmitProbability;
+            public float TransmitProbability
+            {
+                get
+                {
+                    var transmitMultiplierData = SimulationController.Instance.benefits.GetOrSetFlowData(source)
+                        .transmitMultipliers
+                        .FirstOrDefault(x => x.target == target);
+                    return ProbabilityMath
+                        .ProbabilityMultiplier(transmitProbability,
+                            transmitMultiplierData?.transmitMultiplier ?? 1);
+                }
+            }
 
+            public FlowGroupKind source;
             public FlowGroupKind target;
-
         }
 
         public float initialPopulationProportion;

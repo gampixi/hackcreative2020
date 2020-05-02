@@ -55,6 +55,7 @@ namespace Game.Simulation
         [ContextMenu("Tick Forward")]
         public void TickForward()
         {
+            money.CalculateTax();
             // Calculations should be done before actually manipulating the data
             // so no weird side effects happen
             // Order should be kept: healing -> internal transmission -> travel
@@ -73,7 +74,6 @@ namespace Game.Simulation
             happiness.CalculateHappiness();
             statistics.Calculate();
             graphics.UpdateGraphics();
-            money.CalculateTax();
         }
     }
 }

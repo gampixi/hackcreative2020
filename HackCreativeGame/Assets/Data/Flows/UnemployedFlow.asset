@@ -15,8 +15,10 @@ MonoBehaviour:
   kind: 1
   transmitFlowSettings:
   - transmitProbability: 0.001
+    source: 1
     target: 0
   - transmitProbability: 0.0001
+    source: 1
     target: 2
   initialPopulationProportion: 1
   transmitProbabilities:

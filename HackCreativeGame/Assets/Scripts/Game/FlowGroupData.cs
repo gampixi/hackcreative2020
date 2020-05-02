@@ -1,5 +1,7 @@
-﻿using Game.Simulation;
+﻿using System;
+using Game.Simulation;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Game
 {
@@ -11,12 +13,14 @@ namespace Game
         public float happinessMultiplier = 1f;
         public float unhappinessMultiplier = 1f;
         public float taxMultiplier = 1f;
-        public List<TransmitProbabilityMultiplier> transmitMultipliers;
+        public List<TransmitProbabilityMultiplier> transmitMultipliers = new List<TransmitProbabilityMultiplier>();
         public FlowGroupData(FlowGroupKind target)
         {
             this.target = target;
+            this.Reset();
         }
 
+        [System.Serializable]
         public class TransmitProbabilityMultiplier
         {
             public FlowGroupKind target;
@@ -29,6 +33,15 @@ namespace Game
             happinessMultiplier = 1f;
             unhappinessMultiplier = 1f;
             taxMultiplier = 1f;
+            transmitMultipliers.Clear();
+            foreach (var kind in (FlowGroupKind[]) Enum.GetValues(typeof(FlowGroupKind)))
+            {
+                transmitMultipliers.Add(new TransmitProbabilityMultiplier
+                {
+                    target = kind,
+                    transmitMultiplier = 1
+                });
+            }
         }
     }
 }    

@@ -1,6 +1,5 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -10,18 +9,6 @@ namespace Game.Simulation
     public class FlowGroupSettings : ScriptableObject
     {
         public FlowGroupKind kind;
-
-        [System.Serializable]
-        public class TransmitData
-        {
-            public FlowGroupKind target;
-            [SerializeField]
-            private float transmitProbability;
-            public float TransmitProbability => ProbabilityMath
-                .ProbabilityMultiplier(transmitProbability, 
-                    SimulationController.Instance.benefits.GetOrSetFlowData(target).infectProbability);
-        }
-
         private List<TransmitSettings> transmitFlowSettings;
 
         public List<TransmitSettings> TransmitFlowSettings
@@ -45,8 +32,20 @@ namespace Game.Simulation
             }
         }
 
+
         [System.Serializable]
-        public class TransmitSettings
+        public class TransmitData
+        {
+            public FlowGroupKind target;
+            [SerializeField]
+            private float transmitProbability;
+            public float TransmitProbability => ProbabilityMath
+                .ProbabilityMultiplier(transmitProbability, 
+                    SimulationController.Instance.benefits.GetOrSetFlowData(target).infectProbability);
+        }
+
+        [System.Serializable]
+        public class TransmitFlowSettings
         {
             [SerializeField]
             public float transmitProbability;
@@ -102,7 +101,7 @@ namespace Game.Simulation
         private float happinessPerSymptomatic;
         public float HappinessPerSymptomatic
         {
-            get { return happinessPerSymptomatic * SimulationController.Instance.benefits.GetOrSetFlowData(kind).happinessMultiplier; }
+            get { return happinessPerSymptomatic * SimulationController.Instance.benefits.GetOrSetFlowData(kind).unhappinessMultiplier; }
         }
 
         [SerializeField]
@@ -126,6 +125,11 @@ namespace Game.Simulation
     {
         Worker,
         Unemployed,
-        Anarchist
+        Anarchist,
+        Medic,
+        Police,
+        Wealthy,
+        Students,
+        Retired,
     }
 }

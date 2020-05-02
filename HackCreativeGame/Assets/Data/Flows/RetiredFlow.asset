@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1590b3e5d810d314db98423a99817c76, type: 3}
-  m_Name: WorkerFlow
+  m_Name: RetiredFlow
   m_EditorClassIdentifier: 
-  kind: 0
+  kind: 7
   transmitFlowSettings:
   - transmitProbability: 0.001
     target: 1
@@ -42,6 +42,6 @@ MonoBehaviour:
   travelProbability: 0.1
   immunityLossProbability: 0.05
   happinessPerCapita: 1
-  happinessPerSymptomatic: -0.3
-  taxPerTurn: 0.1
-  taxPerTurnSymptomatic: -0.1
+  happinessPerSymptomatic: -10
+  taxPerTurn: -0.3
+  taxPerTurnSymptomatic: -4

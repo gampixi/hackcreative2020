@@ -17,8 +17,7 @@ namespace Game.Simulation
             Settings = settings;
             population = new Population
             {
-                healthy = Mathf.RoundToInt(regionPopulation) - 1,
-                asymptomatic = 1
+                healthy = Mathf.RoundToInt(regionPopulation),
             };
         }
 
@@ -30,7 +29,7 @@ namespace Game.Simulation
         public double GetHappiness()
         {
             return Settings.HappinessPerCapita * (population.healthy + population.asymptomatic)
-                   + Settings.HappinessPerCapita * population.symptomatic;
+                   + Settings.HappinessPerSymptomatic * population.symptomatic;
         }
 
         public void Infect()

@@ -9,6 +9,7 @@ namespace Game.Simulation
     public class RegionSettings : ScriptableObject
     {
         public List<FlowGroupSettings> regionFlowGroups;
+        public List<TransmitFlowSettings> transmitFlowSettings;
         public int initialPopulation;
 
         public List<FlowGroup> InitialFlows()
@@ -18,6 +19,17 @@ namespace Game.Simulation
             regionFlowGroups.ForEach(x => proprtionSum += x.initialPopulationProportion);
             regionFlowGroups.ForEach(x => pop.Add(new FlowGroup(x, Mathf.RoundToInt((float)initialPopulation * (x.initialPopulationProportion/proprtionSum)))));
             return pop;
+        }
+
+        [System.Serializable]
+        public class TransmitFlowSettings
+        {
+            public FlowGroupKind source;
+            [SerializeField]
+            public float transmitProbability;
+
+            public FlowGroupKind target;
+
         }
     }
 }

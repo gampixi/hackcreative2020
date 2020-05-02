@@ -9,14 +9,19 @@ namespace Game.Simulation
     {
         public float tickTime = 1;
         private float _nextTickTime = 1;
-        
+
+        private void Start()
+        {
+            //SimulationController.Instance.TickForward();
+        }
+
         private void Update()
         {
-            if (Time.time > _nextTickTime)
+            /*if (Time.time > _nextTickTime)
             {
                 SimulationController.Instance.TickForward();
                 _nextTickTime += tickTime;
-            }
+            }*/
         }
     }
 }

@@ -7,4 +7,5 @@ using UnityEngine;
 public class GameDatabase : ScriptableObject
 {
     public List<Benefit> benefits;
+    public List<Benefit> orders;
 }

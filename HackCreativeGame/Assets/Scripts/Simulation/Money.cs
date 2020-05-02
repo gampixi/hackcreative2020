@@ -1,4 +1,5 @@
 ﻿using Game.Simulation;
+using System;
 
 namespace Assets.Scripts.Simulation
 {
@@ -40,6 +41,12 @@ namespace Assets.Scripts.Simulation
                     Amount += positive + negative;
                 }
             }
+        }
+
+        internal void CalculateTax()
+        {
+            CalculateBenefitTax();
+            CalculateWorkFlowTax();
         }
     }
 }

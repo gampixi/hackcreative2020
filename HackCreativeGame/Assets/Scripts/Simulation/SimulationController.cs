@@ -53,6 +53,7 @@ namespace Game.Simulation
             happiness.CalculateHappiness();
             statistics.Calculate();
             graphics.UpdateGraphics();
+            money.CalculateTax();
         }
     }
 }

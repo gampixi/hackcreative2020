@@ -26,3 +26,5 @@ MonoBehaviour:
   deathProbability: 0.0005
   travelProbability: 0.1
   immunityLossProbability: 0.05
+  happinessPerCapita: 1
+  happinessPerSymptomatic: 0.4

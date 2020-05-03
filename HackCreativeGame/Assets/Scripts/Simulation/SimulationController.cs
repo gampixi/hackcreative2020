@@ -19,6 +19,8 @@ namespace Game.Simulation
         public Statistics statistics = new Statistics();
         public SimulationGraphicsController graphics;
 
+        public int Day { get; private set; } = 0;
+
         private void Awake()
         {
             if (Instance == null)
@@ -74,6 +76,7 @@ namespace Game.Simulation
             happiness.CalculateHappiness();
             statistics.Calculate();
             graphics.UpdateGraphics();
+            Day++;
         }
     }
 }

@@ -20,6 +20,7 @@ public class UiMainHud : MonoBehaviour
     public TextMeshProUGUI aliveText;
     public TextMeshProUGUI infectedText;
     public TextMeshProUGUI deadText;
+    public TextMeshProUGUI dayText;
 
     private void Awake()
     {
@@ -36,6 +37,7 @@ public class UiMainHud : MonoBehaviour
         aliveText.text = Instance.statistics.TotalAlive.ToString();
         infectedText.text = Instance.statistics.TotalSymptomatic.ToString();
         deadText.text = Instance.statistics.TotalDead.ToString();
+        dayText.text = $"Day {Instance.Day}";
     }
 
     public void NextDayButton()
